@@ -1,0 +1,40 @@
+@import "page-home";
+@import "variables";
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Staatliches&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+nav {
+  ul {
+    display: flex;
+    justify-content: center;
+  }
+
+  li {
+    list-style: none;
+    color: black;
+    margin: 0 30px;
+  }
+}
+
+.page {
+  width: 100%;
+
+  background-color: beige;
+  display: none;
+
+  &.page--current {
+    display: block;
+  }
+}
+
+
+

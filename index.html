@@ -2,11 +2,33 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Chaokai Lai</title>
+    <title>Chaokai Lai's web</title>
     <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
-
+    <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
 
+    <nav>
+        <ul>
+            <li><a href="#home" class="navigation">home</a></li>
+            <li><a href="#resume" class="navigation">resume</a></li>
+            <li><a href="#blog" class="navigation">blog</a></li>
+            <li><a href="#gallery" class="navigation">gallery</a></li>
+            <li><a href="#contact" class="navigation">contact</a></li>
+        </ul>
+    </nav>
+
+    <div id="main">
+        <section class="page" data-id="home">home</section>
+        <section class="page" data-id="resume">resume</section>
+        <section class="page" data-id="blog">blog</section>
+        <section class="page" data-id="gallery">gallery</section>
+        <section class="page" data-id="contact">contact</section>
+
+        <script src="js/page-switcher.js"></script>
+        <script src="js/main.js"></script>
+    </div>
+
+    <footer></footer>
 </body>
 </html>
