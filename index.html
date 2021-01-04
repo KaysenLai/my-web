@@ -9,21 +9,47 @@
 <body>
 
     <nav>
-        <ul>
-            <li><a href="#home" class="navigation">home</a></li>
-            <li><a href="#resume" class="navigation">resume</a></li>
-            <li><a href="#blog" class="navigation">blog</a></li>
-            <li><a href="#gallery" class="navigation">gallery</a></li>
-            <li><a href="#contact" class="navigation">contact</a></li>
-        </ul>
+        <div class="nav-content">
+            <a href="#home">
+                <img class="nav-log" src="images/nav-logo.png" alt="navigation logo">
+            </a>
+
+            <ul>
+                <li><a href="#home" class="navigation">home</a></li>
+                <li><a href="#resume" class="navigation">resume</a></li>
+                <li><a href="#blog" class="navigation">blog</a></li>
+                <li><a href="#gallery" class="navigation">gallery</a></li>
+                <li><a href="#contact" class="navigation">contact</a></li>
+            </ul>
+        </div>
     </nav>
 
     <div id="main">
-        <section class="page" data-id="home">home</section>
-        <section class="page" data-id="resume">resume</section>
-        <section class="page" data-id="blog">blog</section>
-        <section class="page" data-id="gallery">gallery</section>
-        <section class="page" data-id="contact">contact</section>
+        <section class="page home" data-id="home">
+            <div class="home__header">
+
+
+                <img src="images/home-page-photo.jpg" alt="photo background">
+                <img src="images/home-page-photo-mock.png" alt="photo background">
+                <div class="intro">
+                    <div class="intro__wrap">
+                    <h2>i’m a <span>web developer</span></h2>
+                        <div class="wrap">
+                            <h3>chaokai lai</h3>
+                            <button>resume</button>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="page resume" data-id="resume">resume</section>
+        <section class="page blog" data-id="blog">blog</section>
+        <section class="page gallery" data-id="gallery">gallery</section>
+        <section class="page contact" data-id="contact">contact</section>
 
         <script src="js/page-switcher.js"></script>
         <script src="js/main.js"></script>

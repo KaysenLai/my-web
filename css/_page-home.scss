@@ -1,4 +1,100 @@
-body {
+@import "variables";
+
+.home {
   font-family: 'Staatliches', cursive;
+
+
+  &__header {
+    position: relative;
+
+
+    img {
+
+      width: 100%;
+      height: auto;
+
+      &:nth-of-type(2) {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 2;
+      }
+      &:nth-of-type(1) {
+        animation: hue-rotate 15s linear infinite;
+      }
+    }
+
+    .intro {
+      position: absolute;
+      z-index: 2;
+      width: 72.73%;
+      height: 40%;
+      background-color: rgba(0, 0, 0, 0.5);
+      border-radius: 30px;
+      top: 50%;
+      left: 50%;
+      transform: translateX(-50%) translateY(-50%);
+
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+
+      &__wrap {
+
+        letter-spacing: 0.25em;
+        color: white;
+
+
+        h2 {
+          display: inline-block;
+          font-size: calc(10vw - 100px);
+          line-height: 112px;
+
+
+          span {
+            color: $pink;
+          }
+        }
+
+
+
+        .wrap {
+          display: flex;
+          align-items: center;
+          justify-content: flex-end;
+
+          h3 {
+            display: inline-block;
+            font-size: 60px;
+
+          }
+
+          button {
+            border: white solid 4px;
+            border-radius: $border-radius--small;
+            color: white;
+            background-color: transparent;
+            width: 194px;
+            line-height: 66px;
+            font-size: 40px;
+            cursor: pointer;
+          }
+        }
+      }
+
+
+    }
+  }
 }
 
+@keyframes hue-rotate {
+  0% {
+    filter: hue-rotate(0);
+  }
+  30% {
+    filter: hue-rotate(0);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}

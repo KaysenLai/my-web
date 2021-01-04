@@ -10,25 +10,78 @@
 
 body {
   font-family: 'Roboto', sans-serif;
+
+  h2, h3, h4, h5, h6 {
+    font-weight: normal;
+  }
+  img {
+    display:block
+  }
+
+  button {
+    border: none;
+  }
 }
 
 nav {
-  ul {
+  font-family: 'Staatliches', cursive;
+  background-color: $black-main;
+  height: 72px;
+  box-shadow: 0 4px 20px 20px rgba(0, 0, 0, 0.5);
+  width: 100%;
+
+  .nav-content{
+    height: 100%;
+    margin: 0 auto;
+    padding: 0 $home-page-padding;
+    box-sizing: content-box;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
+
+    img {
+      width: 80px;
+      height: auto;
+
+    }
+    ul {
+      display: flex;
+      align-items: center;
+
+      li {
+        list-style: none;
+        margin-left: 40px;
+        border-radius: 4px;
+
+        &:hover {
+          a {
+            color: white;
+          }
+          background-color: #404040;
+          transition: background-color .3s ease;
+        }
+
+        a {
+          font-size: 30px;
+          letter-spacing: 0.1em;
+          color: $white-light;
+          text-decoration: none;
+          line-height: 50px;
+          padding: 0 20px;
+          transition: color .3s ease;
+        }
+      }
+    }
   }
 
-  li {
-    list-style: none;
-    color: black;
-    margin: 0 30px;
-  }
+
+
 }
 
 .page {
   width: 100%;
-
-  background-color: beige;
+  height: 2000px;
+  background-color: $background;
   display: none;
 
   &.page--current {
