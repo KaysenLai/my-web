@@ -27,8 +27,10 @@ body {
 nav {
   font-family: 'Staatliches', cursive;
   background-color: $black-main;
+  position: relative;
+  z-index: 10;
   height: 72px;
-  box-shadow: 0 4px 20px 20px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 4px 20px 12px rgba(0, 0, 0, 0.5);
   width: 100%;
   box-sizing: border-box;
 
@@ -86,6 +88,11 @@ nav {
   width: 100%;
   background-color: $background;
   display: none;
+
+  &>.wait {
+    color: white;
+    font-size: 300px;
+  }
 
   &.page--current {
     display: block;

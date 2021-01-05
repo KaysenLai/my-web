@@ -26,7 +26,7 @@
         </div>
     </nav>
 
-    <div id="main">
+    <div class="main">
         <section class="page home" data-id="home">
             <div class="home__header">
                 <div class="home__header__background">
@@ -46,10 +46,11 @@
                     </div>
                 </div>
             </div>
-            <div class="home__skill">
-                <div class="home__skill__content">
 
-                    <h2 class="home__skill__content__header header-with-block">skill</h2>
+            <div class="home__skill home-section">
+                <div class="home__skill__content home-section__content">
+
+                    <h2 class="home__skill__content__header home-section__content__header header-with-block">skill</h2>
                     <div class="home__skill__content__cards">
                         <div class="skill-card">
                             <div class="skill-card__mask">
@@ -100,18 +101,110 @@
                                 <img src="images/skill-light.png" alt="skill light icon">
                             </div>
                             <div class="skill-card__text">
-                                <h3>idea</h3>
+                                <h3>learn</h3>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+
+            <div class="home__project home-section">
+                <div class="home__project__mask"></div>
+                <div class="home__project__content home-section__content">
+                    <h2 class="home__project__content__header home-section__content__header header-with-block">project</h2>
+                    <div class="home__project__content__projects">
+                        <div class="project">
+                            <div class="project__mask"></div>
+                            <h3 class="project__text">Traffic Accidents Map</h3>
+                        </div>
+                        <div class="project">
+                            <div class="project__mask"></div>
+                            <h3 class="project__text">Weather App</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="home__blog home-section">
+                <div class="home__blog__content home-section__content">
+                    <h2 class="home__blog__content__header home-section__content__header header-with-block">latest blog</h2>
+                    <div class="home__blog__content__posts">
+                        <div class="post">
+                            <div class="post__img"></div>
+                            <div class="post__text">
+                                <a href=""><h2>Learning react and learning react and learning react </h2></a>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                <a>
+                                    <p>Read More</p>
+                                    <img src="images/read-more-arrow.svg" alt="read-more-arrow">
+                                </a>
+                                <div class="post__text__tags">
+                                    <div class="tag tag--color-magenta">react</div>
+                                    <div class="tag tag--color-purple">front end</div>
+                                </div>
+                                <div class="post__text__time">January 04, 2021</div>
+                            </div>
+
+                        </div>
+                        <div class="post">
+                            <div class="post__img"></div>
+                            <div class="post__text">
+                                <h2>Learning react and learning react and learning react </h2>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                <a>
+                                    <p>Read More</p>
+                                    <img src="images/read-more-arrow.svg" alt="read-more-arrow">
+                                </a>
+                                <div class="post__text__tags">
+                                    <div class="tag tag--color-magenta">react</div>
+                                    <div class="tag tag--color-purple">front end</div>
+                                </div>
+                                <div class="post__text__time">January 04, 2021</div>
+                            </div>
+
+                        </div>
+                        <div class="post">
+                            <div class="post__img"></div>
+                            <div class="post__text">
+                                <h2>Learning react and learning react and learning react </h2>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                <a>
+                                    <p>Read More</p>
+                                    <img src="images/read-more-arrow.svg" alt="read-more-arrow">
+                                </a>
+                                <div class="post__text__tags">
+                                    <div class="tag tag--color-magenta">react</div>
+                                    <div class="tag tag--color-purple">front end</div>
+                                </div>
+                                <div class="post__text__time">January 04, 2021</div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="home__gallery home-section">
+                <div class="home__gallery__content home-section__content">
+                    <h2 class="home__gallery__content__header home-section__content__header header-with-block">gallery</h2>
+                    <div class="home__gallery__content__photos"></div>
+                </div>
+            </div>
+
         </section>
 
-        <section class="page resume" data-id="resume">resume</section>
-        <section class="page blog" data-id="blog">blog</section>
-        <section class="page gallery" data-id="gallery">gallery</section>
-        <section class="page contact" data-id="contact">contact</section>
+        <section class="page resume" data-id="resume">
+            <span class="wait">resume</span>
+        </section>
+        <section class="page blog" data-id="blog">
+            <span class="wait">blog</span>
+        </section>
+        <section class="page gallery" data-id="gallery">
+            <span class="wait">gallery</span>
+        </section>
+        <section class="page contact" data-id="contact">
+            <span class="wait">contact</span>
+        </section>
 
         <script src="js/page-switcher.js"></script>
         <script src="js/main.js"></script>

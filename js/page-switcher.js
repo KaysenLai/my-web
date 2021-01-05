@@ -11,10 +11,17 @@ window.onhashchange = () => {
     switchPage(location.hash)
 }
 
+const pageNames = ['home', 'resume', 'blog', 'gallery','contact']
+
 function switchPage(hash){
     const hashText = hash.substring(1) // eg: turn "#home" to "home"
-    removeCurrentPage()
     const hashPage = document.querySelector("section[data-id=" + hashText + "]")
+    if (hashNotFound(hash)) {
+        if (!hashPage)
+            setFirstPage()
+        return
+    }
+    removeCurrentPage()
     hashPage.classList.add("page--current")
 }
 
@@ -27,6 +34,17 @@ function removeCurrentPage() {
     const currentPage = document.querySelector(".page--current")
     if(currentPage)
         currentPage.classList.remove("page--current")
+}
+
+function hashNotFound(hash) {
+    const hashText = hash.substring(1) // eg: turn "#home" to "home"
+    for( let pageName of pageNames) {
+        console.log(pageName)
+        console.log(hashText)
+        if (pageName === hashText)
+            return false
+    }
+    return true
 }
 
 
