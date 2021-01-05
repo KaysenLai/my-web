@@ -31,7 +31,7 @@
   align-items: center;
   justify-content: center;
 }
-.home__header__intro-box {
+.home__header__intro-content {
   background-color: rgba(0, 0, 0, 0.5);
   border-radius: 30px;
   width: 80%;
@@ -43,7 +43,7 @@
   align-items: center;
   position: relative;
 }
-.home__header__intro-box__text {
+.home__header__intro-content__text {
   letter-spacing: 0.25em;
   display: flex;
   justify-content: center;
@@ -52,21 +52,21 @@
   position: absolute;
   right: 100px;
 }
-.home__header__intro-box__text h2 {
+.home__header__intro-content__text h2 {
   font-size: 90px;
   line-height: 112px;
 }
-.home__header__intro-box__text h2 span {
+.home__header__intro-content__text h2 span {
   color: #E73273;
 }
-.home__header__intro-box__text__wrap {
+.home__header__intro-content__text__wrap {
   display: flex;
   align-items: center;
 }
-.home__header__intro-box__text__wrap h3 {
+.home__header__intro-content__text__wrap h3 {
   font-size: 60px;
 }
-.home__header__intro-box__text__wrap button {
+.home__header__intro-content__text__wrap button {
   margin-left: 20px;
   border: white solid 3px;
   border-radius: 8px;
@@ -81,7 +81,7 @@
   box-sizing: border-box;
   transition: border 0.6s ease;
 }
-.home__header__intro-box__text__wrap button::before {
+.home__header__intro-content__text__wrap button::before {
   content: "resume";
   border-radius: 7px;
   width: 152px;
@@ -93,17 +93,116 @@
   left: -3px;
   transition: opacity 0.6s ease;
 }
-.home__header__intro-box__text__wrap button:hover {
+.home__header__intro-content__text__wrap button:hover {
   border: transparent solid 3px;
 }
-.home__header__intro-box__text__wrap button:hover::before {
+.home__header__intro-content__text__wrap button:hover::before {
   opacity: 1;
 }
 .home__skill {
   width: 100%;
   display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: #141414;
-  height: 600px;
+  height: 700px;
+}
+.home__skill__content {
+  width: 100%;
+  max-width: 1680px;
+  padding: 100px 120px;
+  box-sizing: border-box;
+  height: 100%;
+  color: white;
+}
+.home__skill__content__header::before {
+  background-color: #6B03E0;
+}
+.home__skill__content__cards {
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  color: black;
+}
+.home__skill__content__cards .skill-card {
+  width: 22%;
+  height: 352px;
+  background-color: #e8e8e8;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: none;
+  transition: all 0.5s ease;
+}
+.home__skill__content__cards .skill-card__mask {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  height: 270px;
+  background: linear-gradient(305.78deg, #6500E0 0%, #9E1FDA 53.99%, #D43F8D 100%);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+.home__skill__content__cards .skill-card__mask__text {
+  width: 75%;
+  height: 75%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  box-sizing: border-box;
+  border-radius: 10px;
+}
+.home__skill__content__cards .skill-card__mask__text p {
+  color: white;
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+}
+.home__skill__content__cards .skill-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 30px -10px #E73273;
+}
+.home__skill__content__cards .skill-card:hover .skill-card__mask {
+  opacity: 1;
+}
+.home__skill__content__cards .skill-card__icon {
+  width: 100%;
+  height: 270px;
+  background-color: #262626;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.home__skill__content__cards .skill-card__text {
+  width: 100%;
+  height: 82px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.home__skill__content__cards .skill-card__text h3 {
+  font-size: 40px;
+  letter-spacing: 0.05em;
+}
+
+.header-with-block {
+  font-size: 60px;
+  line-height: 49px;
+  position: relative;
+  margin-left: 28px;
+  letter-spacing: 0.05em;
+}
+.header-with-block::before {
+  content: "";
+  border-radius: 4px;
+  width: 17px;
+  height: 46px;
+  position: absolute;
+  top: 0;
+  left: -28px;
 }
 
 @keyframes hue-rotate {

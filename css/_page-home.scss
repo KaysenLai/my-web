@@ -27,7 +27,6 @@
       }
     }
 
-
     &__intro {
       width: 100%;
       height: 674px;
@@ -39,7 +38,7 @@
       align-items: center;
       justify-content: center;
 
-      &-box {
+      &-content {
         background-color: rgba(0, 0, 0, 0.5);
         border-radius: 30px;
 
@@ -125,10 +124,127 @@
   &__skill {
     width: 100%;
     display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: $background;
-    height: 600px;
+    height: 700px;
+
+    &__content {
+      width: 100%;
+      max-width: 1680px;
+      padding: 100px 120px;
+      box-sizing: border-box;
+      height: 100%;
+      color: white;
+
+      &__header::before {
+        background-color: $purple;
+      }
+
+      &__cards {
+        margin-top: 50px;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        color: black;
+
+        .skill-card {
+          width: 22%;
+          height: 352px;
+          background-color: $white-light;
+          border-radius: $border-radius--small;
+          overflow: hidden;
+          position: relative;
+          box-shadow: none;
+          transition: all 0.5s ease;
+
+          &__mask {
+            position: absolute;
+            z-index: 1;
+            width: 100%;
+            height: 270px;
+            background: linear-gradient(305.78deg, #6500E0 0%, #9E1FDA 53.99%, #D43F8D 100%);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+
+            &__text {
+              width: 75%;
+              height: 75%;
+              position: absolute;
+              left: 50%;
+              top: 50%;
+              transform: translateX(-50%) translateY(-50%);
+              background-color: rgba(0, 0, 0, 0.5);
+              padding: 20px;
+              box-sizing: border-box;
+              border-radius: $border-radius--small;
+              p {
+                color: white;
+                font-family: "Roboto", sans-serif;
+                font-size: 18px;
+              }
+            }
+          }
+
+          &:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 30px -10px $pink;
+          }
+
+          &:hover .skill-card__mask {
+            opacity: 1;
+          }
+
+          &__icon {
+            width: 100%;
+            height: 270px;
+            background-color: $black-main;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+
+          &__text {
+            width: 100%;
+            height: 82px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            h3 {
+
+              font-size: 40px;
+              letter-spacing: 0.05em;
+            }
+          }
+        }
+      }
+
+    }
   }
 }
+
+.header-with-block {
+  font-size: 60px;
+  line-height: 49px;
+  position: relative;
+  margin-left: 28px;
+  letter-spacing: 0.05em;
+
+  &::before {
+    content: '';
+    border-radius: $border-radius--micro;
+    width: 17px;
+    height: 46px;
+    position: absolute;
+    top: 0;
+    left: -28px;
+  }
+
+}
+
+
+
 
 @keyframes hue-rotate {
   0% {
