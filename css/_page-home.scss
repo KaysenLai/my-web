@@ -42,7 +42,7 @@
         border-radius: 30px;
 
         width: 80%;
-        max-width: 1440px;
+        max-width: 1140px;
         padding: 0 120px;
         box-sizing: border-box;
 
@@ -270,6 +270,8 @@
           }
 
           &__text {
+            width: 100%;
+            text-align: center;
             color: white;
             font-size: 32px;
             position: absolute;
@@ -465,11 +467,13 @@
         align-items: center;
         padding-right: 30px;
         margin-top: 30px;
+        text-decoration: none;
 
         p {
           color: white;
           font-size: 34px;
           letter-spacing: 0.05em;
+
         }
 
         img {
@@ -488,28 +492,30 @@
   }
 
   &__contact {
-    height: 280px;
+    height: 200px;
     background-image: linear-gradient(90deg, #6500E0 0%, #9E1FDA 50%, #D43F8D 100%);
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    color: white;
 
     h2 {
-      font-size: 60px;
-      line-height: 90px;
+      color: white;
+      font-size: 50px;
+      line-height: 50px;
       letter-spacing: 0.05em;
     }
 
     a {
-      margin-top: 10px;
-      font-size: 32px;
+      color: white;
+      margin-top: 20px;
+      font-size: 28px;
       padding: 6px 20px;
       letter-spacing: 0.05em;
       border: white solid 3px;
       border-radius: $border-radius--small;
       cursor: pointer;
+      text-decoration: none;
       transition: transform 0.6s ease;
 
       &:hover {
@@ -519,6 +525,23 @@
     }
   }
 }
+
+.home-section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $background;
+
+  &__content {
+    width: 100%;
+    max-width: 1440px;
+    padding: 100px 120px;
+    box-sizing: border-box;
+    height: 100%;
+  }
+}
+
 
 .header-with-block {
   font-size: 60px;
@@ -540,21 +563,7 @@
   }
 }
 
-.home-section {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: $background;
 
-  &__content {
-    width: 100%;
-    max-width: 1680px;
-    padding: 100px 120px;
-    box-sizing: border-box;
-    height: 100%;
-  }
-}
 
 .tag {
   height: 34px;

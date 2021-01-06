@@ -195,7 +195,7 @@
                         <div class="photo"></div>
                         <div class="photo"></div>
                     </div>
-                    <a class="home__gallery__content__button">
+                    <a class="home__gallery__content__button" href="#gallery">
                         <p>See More</p>
                         <img src="images/read-more-arrow.svg" alt="read-more-arrow">
                     </a>
@@ -204,7 +204,7 @@
 
             <div class="home__contact">
                 <h2>feel free to contact me</h2>
-                <a>contact now</a>
+                <a href="#contact">contact now</a>
             </div>
         </section>
 
@@ -225,62 +225,55 @@
         <script src="js/main.js"></script>
     </div>
 
-    <footer>
-        <section class="footer__about-the-web">
-            <h2>About the web</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna </p>
-            <div class="socialIcons">
-                <a href=""><span class= "fab fa-facebook-f"></span></a>
-                <a href=""><span class= "fab fa-twitter"></span></a>
-                <a href=""><span class= "fab fa-instagram"></span></a>
-                <a href=""><span class= "fab fa-youtube"></span></a>
-            </div>
-        </section>
-
-        <section class="footer__links">
-            <h2>Links</h2>
-            <nav>
-                <ul>
-                    <li>
-                        <a href="index.html">Home</a>
-                    </li>
-                    <li>
-                        <a href="activity.html">Activity</a>
-                    </li>
-                    <li>
-                        <a href="room.html">Room</a>
-                    </li>
-                    <li>
-                        <a href="service.html">Service</a>
-                    </li>
-                    <li>
-                        <a href="bookpage.html">Book</a>
-                    </li>
-                    <li>
-                        <a href="contact.html">Contact us</a>
-                    </li>
-                </ul>
-            </nav>
-
-        </section>
-
-        <section class="footer__contact">
-            <h2>Address</h2>
-            <div class= "content-footer">
-                <div class = "place">
-                    <span class="fas fa-map-marker-alt"></span>
-                    <span class="text">: 266 George St, Brisbane City QLD 4000</span>
+    <footer class="footer">
+        <div class="footer__content">
+            <section class="footer__content__icon">
+                <img src="images/footer-logo.png" alt="my logo">
+            </section>
+            <section class="footer__content__about-web">
+                <div>
+                    <h2>About the web</h2>
+                    <div class="footer__content__about-web__content">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna </p>
+                    </div>
                 </div>
-                <div class = "phone">
-                    <span class="fas fa-phone"></span>
-                    <span class="text">: +61 0488 888 888</span>
+            </section>
+            <section class="footer__content__links">
+                <div>
+                    <h2>Links</h2>
+                    <nav class="footer__content__links__nav">
+                        <ul>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#resume">Resume</a></li>
+                            <li><a href="#blog">Blog</a></li>
+                            <li><a href="#gallery">Gallery</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                        </ul>
+                    </nav>
                 </div>
-                <div class = "email">
-                    <span class="fas fa-envelope"></span>
-                    <span class="text">: chaokai.lai@gmail.com</span>
+            </section>
+            <section class="footer__content__contact">
+                <div>
+                <h2>Contact</h2>
+                    <div class= "footer__content__contact__content">
+                        <div>
+                            <p><span>Email: </span>chaokai.lai@gmail.com</p>
+                            <p><span>Location: </span>Brisbane, Queensland, AU</p>
+                            <p><span>Phone: </span>+61 0488 888 888</p>
+                        </div>
+                        <div class="footer__content__contact__content__social-icons">
+                            <a href=""><span class= "fab fa-facebook-f"></span></a>
+                            <a href=""><span class= "fab fa-twitter"></span></a>
+                            <a href=""><span class= "fab fa-instagram"></span></a>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </section>
+            </section>
+        </div>
+        <div class="footer__copyright">
+            <h3>Designed and developed by Chaokai Lai.</h3>
+            <h3>©All Rights Reserved</h3>
+        </div>
     </footer>
 </body>
 </html>

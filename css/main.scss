@@ -99,59 +99,110 @@ body {
   }
 }
 
-footer {
-  height: 300px;
+.footer {
+  width: 100%;
   background: $black-main;
+  height: 300px;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 
-  section {
-    width: 10%;
-    margin: 1em 2em;
+  &__content {
+    color: $grey;
+    width: 100%;
+    max-width: 1440px;
+    padding: 20px 120px;
+    box-sizing: border-box;
+    height: 220px;
+    display: flex;
+    justify-content: space-between;
 
-    &:nth-of-type(1) {
-      width: 40%;
+    section {
+      padding: 15px;
+      display: flex;
+      justify-content: center;
+      &:nth-of-type(1) {
+        flex: 1;
+      }
+
+      &:nth-of-type(2) {
+        flex: 3;
+      }
+
+      &:nth-of-type(3) {
+        flex: 1;
+      }
+
+      &:nth-of-type(4) {
+        flex: 2;
+      }
+
+      h2 {
+        font-size: 28px;
+        line-height: 50px;
+        font-weight: 500;
+      }
     }
 
-    &:nth-of-type(3) {
-      width: 20%;
+    &__icon {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      img {
+        width: 100px;
+      }
     }
 
-    h2{
-      font-size: 2em;
-      line-height: 2em;
+    &__about-web__content {
+      p {
+        font-size: 16px;
+        line-height: 20px;
+      }
     }
 
-    span, p{
-      font-size: 1.2em;
-      line-height: 1.3em;
+    &__links__nav {
+      li {
+        list-style: none;
+        margin-bottom: 4px;
+      }
+      a {
+        font-size: 16px;
+        color: $grey;
+        text-decoration: none;
+      }
     }
 
-    .aboutUs .socialIcons {
-      margin-top: 10px;
-    }
+    &__contact {
+      font-size: 16px;
 
-    .aboutUs .socialIcons a {
-      color: #c2c2c2;
-      text-decoration: none;
-      font-size: 1.2em;
-      line-height: 1.6em;
-      margin: .2em;
-    }
+      p {
+        line-height: 22px;
+      }
+      span {
+        font-weight: bold;
+      }
 
-    .links ul{
-      list-style: none;
+      &__content__social-icons {
+        margin-top: 10px;
+        .fab {
+          color: $grey;
+          font-size: 20px;
+          margin-right: 4px;
+        }
+      }
     }
+  }
 
-    .links a{
-      text-decoration: none;
-      color: #c2c2c2;
-      font-size: 1.2em;
-      line-height: 1.3em;
-    }
 
-    .address  .fa-map-marker-alt{
-      padding: 0 2.5px;
+
+  &__copyright {
+    width: 100%;
+    color: $grey;
+    text-align: center;
+    h3 {
+      font-size: 14px;
+      margin: 4px 0;
     }
   }
 }

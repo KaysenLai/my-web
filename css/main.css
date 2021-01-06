@@ -35,7 +35,7 @@
   background-color: rgba(0, 0, 0, 0.5);
   border-radius: 30px;
   width: 80%;
-  max-width: 1440px;
+  max-width: 1140px;
   padding: 0 120px;
   box-sizing: border-box;
   height: 280px;
@@ -229,6 +229,8 @@
   transition: height 1s ease;
 }
 .main .home__project__content__projects .project__text {
+  width: 100%;
+  text-align: center;
   color: white;
   font-size: 32px;
   position: absolute;
@@ -386,6 +388,7 @@
   align-items: center;
   padding-right: 30px;
   margin-top: 30px;
+  text-decoration: none;
 }
 .main .home__gallery__content__button p {
   color: white;
@@ -403,32 +406,49 @@
   right: -6px;
 }
 .main .home__contact {
-  height: 280px;
+  height: 200px;
   background-image: linear-gradient(90deg, #6500E0 0%, #9E1FDA 50%, #D43F8D 100%);
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  color: white;
 }
 .main .home__contact h2 {
-  font-size: 60px;
-  line-height: 90px;
+  color: white;
+  font-size: 50px;
+  line-height: 50px;
   letter-spacing: 0.05em;
 }
 .main .home__contact a {
-  margin-top: 10px;
-  font-size: 32px;
+  color: white;
+  margin-top: 20px;
+  font-size: 28px;
   padding: 6px 20px;
   letter-spacing: 0.05em;
   border: white solid 3px;
   border-radius: 10px;
   cursor: pointer;
+  text-decoration: none;
   transition: transform 0.6s ease;
 }
 .main .home__contact a:hover {
   transform: scale(1.05);
   box-shadow: 0 0 10px;
+}
+
+.home-section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #181818;
+}
+.home-section__content {
+  width: 100%;
+  max-width: 1440px;
+  padding: 100px 120px;
+  box-sizing: border-box;
+  height: 100%;
 }
 
 .header-with-block {
@@ -448,21 +468,6 @@
   top: 0;
   left: -28px;
   background-color: #E73273;
-}
-
-.home-section {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #181818;
-}
-.home-section__content {
-  width: 100%;
-  max-width: 1680px;
-  padding: 100px 120px;
-  box-sizing: border-box;
-  height: 100%;
 }
 
 .tag {
@@ -579,51 +584,92 @@ body button {
   display: block;
 }
 
-footer {
-  height: 300px;
+.footer {
+  width: 100%;
   background: #262626;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.footer__content {
+  color: #c2c2c2;
+  width: 100%;
+  max-width: 1440px;
+  padding: 20px 120px;
+  box-sizing: border-box;
+  height: 220px;
+  display: flex;
+  justify-content: space-between;
+}
+.footer__content section {
+  padding: 15px;
   display: flex;
   justify-content: center;
 }
-footer section {
-  width: 10%;
-  margin: 1em 2em;
+.footer__content section:nth-of-type(1) {
+  flex: 1;
 }
-footer section:nth-of-type(1) {
-  width: 40%;
+.footer__content section:nth-of-type(2) {
+  flex: 3;
 }
-footer section:nth-of-type(3) {
-  width: 20%;
+.footer__content section:nth-of-type(3) {
+  flex: 1;
 }
-footer section h2 {
-  font-size: 2em;
-  line-height: 2em;
+.footer__content section:nth-of-type(4) {
+  flex: 2;
 }
-footer section span, footer section p {
-  font-size: 1.2em;
-  line-height: 1.3em;
+.footer__content section h2 {
+  font-size: 28px;
+  line-height: 50px;
+  font-weight: 500;
 }
-footer section .aboutUs .socialIcons {
+.footer__content__icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.footer__content__icon img {
+  width: 100px;
+}
+.footer__content__about-web__content p {
+  font-size: 16px;
+  line-height: 20px;
+}
+.footer__content__links__nav li {
+  list-style: none;
+  margin-bottom: 4px;
+}
+.footer__content__links__nav a {
+  font-size: 16px;
+  color: #c2c2c2;
+  text-decoration: none;
+}
+.footer__content__contact {
+  font-size: 16px;
+}
+.footer__content__contact p {
+  line-height: 22px;
+}
+.footer__content__contact span {
+  font-weight: bold;
+}
+.footer__content__contact__content__social-icons {
   margin-top: 10px;
 }
-footer section .aboutUs .socialIcons a {
+.footer__content__contact__content__social-icons .fab {
   color: #c2c2c2;
-  text-decoration: none;
-  font-size: 1.2em;
-  line-height: 1.6em;
-  margin: 0.2em;
+  font-size: 20px;
+  margin-right: 4px;
 }
-footer section .links ul {
-  list-style: none;
-}
-footer section .links a {
-  text-decoration: none;
+.footer__copyright {
+  width: 100%;
   color: #c2c2c2;
-  font-size: 1.2em;
-  line-height: 1.3em;
+  text-align: center;
 }
-footer section .address .fa-map-marker-alt {
-  padding: 0 2.5px;
+.footer__copyright h3 {
+  font-size: 14px;
+  margin: 4px 0;
 }
 
 /*# sourceMappingURL=main.css.map */
