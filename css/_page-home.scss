@@ -1,4 +1,5 @@
 @import "variables";
+@import "media-query";
 
 .main .home {
   font-family: 'Staatliches', cursive;
@@ -32,7 +33,6 @@
       box-sizing: border-box;
       position: relative;
       z-index: 3;
-
       display: flex;
       align-items: center;
       justify-content: center;
@@ -40,12 +40,10 @@
       &-content {
         background-color: rgba(0, 0, 0, 0.5);
         border-radius: 30px;
-
         width: 80%;
         max-width: 1140px;
         padding: 0 120px;
         box-sizing: border-box;
-
         height: 280px;
         display: flex;
         align-items: center;
@@ -60,13 +58,18 @@
           position: absolute;
           right: 100px;
 
+          span {
+            color: $magenta;
+            font-size: 90px;
+            line-height: 112px;
+          }
           h2 {
             font-size: 90px;
             line-height: 112px;
+          }
 
-            span {
-              color: $magenta;
-            }
+          &--mobile {
+            display: none;
           }
 
           &__wrap {
@@ -115,14 +118,131 @@
         }
 
       }
+    }
 
+    @include MQ(XL) {
+      &__background {
+        .background-photo-mask {
+          background-position: 20% center;
+        }
 
+        .background-photo {
+          background-position: 20% center;
+        }
+      }
+      &__intro {
+        &-content {
+          width: 85%;
+          &__text {
+            right: 80px;
+            h2 {
+              font-size: 70px;
+              line-height: 112px;
+              span {
+                font-size: 70px;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    @include MQ(L) {
+      padding-top: 72px;
+      &__intro {
+        &-content {
+          &__text {
+            right: 50px;
+            h2 {
+              font-size: 60px;
+              line-height: 112px;
+              span {
+                font-size: 60px;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    @include MQ(M) {
+      &__intro {
+        &-content {
+          width: 85%;
+          height: 60%;
+          padding: 0;
+          display: flex;
+          justify-content: center;
+          &__text {
+            right: unset;
+            h2 {
+              font-size: 52px;
+              line-height: 65px;
+
+              span {
+                font-size: 52px;
+                line-height: 65px;
+              }
+            }
+            h3 {
+              font-size: 40px;
+            }
+            &--desktop {
+              display: none;
+            }
+            &--mobile {
+              display: block;
+            }
+            &__wrap {
+              margin-top: 30px;
+              flex-direction: column;
+              align-items: flex-start;
+              button {
+                margin-top: 10px;
+                margin-left: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    @include MQ(S) {
+      &__intro {
+        &-content {
+          width: 85%;
+          &__text {
+            h2 {
+              font-size: 50px;
+              line-height: 65px;
+              letter-spacing: 0.02em;
+              span {
+                font-size: 50px;
+                line-height: 65px;
+                letter-spacing: 0.02em;
+              }
+            }
+            h3 {
+              font-size: 30px;
+            }
+            button {
+              font-size: 25px;
+              width: 120px;
+              line-height: 46px;
+              &::before {
+                font-size: 25px;
+                width: 120px;
+                line-height: 52px;
+              }
+            }
+          }
+        }
+      }
     }
   }
 
   &__skill {
     background-color: $background;
-    height: 680px;
     box-shadow: 0 -4px 20px 12px rgba(0, 0, 0, 0.5);
     position: relative;
     z-index: 5;
@@ -211,11 +331,51 @@
         }
       }
     }
+
+    @include MQ(XL) {
+      &__content__cards {
+        .skill-card{
+          width: 31%;
+          &:nth-of-type(4) {
+            display: none;
+          }
+        }
+      }
+    }
+    @include MQ(L) {
+      &__content__cards {
+        flex-wrap: wrap;
+        .skill-card{
+          width: 48%;
+          margin-bottom: 6%;
+          &:nth-of-type(4) {
+            display: block;
+          }
+        }
+      }
+    }
+
+    @include MQ(M) {
+      &__content__cards {
+        justify-content: center;
+        .skill-card{
+          width: 80%;
+        }
+      }
+    }
+
+    @include MQ(M) {
+      &__content__cards {
+        .skill-card{
+          width: 100%;
+          margin-bottom: 10%;
+        }
+      }
+    }
   }
 
   &__project {
     background-color: $background;
-    height: 730px;
     position: relative;
 
     &__mask {
@@ -280,6 +440,8 @@
             bottom: 20px;
             letter-spacing: 0.05em;
             transition: all 0.8s ease;
+            padding: 0 12px;
+            box-sizing: border-box;
           }
 
           &:hover .project__mask{
@@ -293,12 +455,26 @@
         }
       }
     }
+
+    @include MQ(L) {
+      &__content__projects {
+          display: flex;
+          justify-content: space-between;
+          margin-top: 60px;
+          position: relative;
+          z-index: 1;
+          flex-wrap: wrap;
+
+          .project {
+            width: 100%;
+            margin-bottom: 8%;
+          }
+      }
+    }
   }
 
   &__blog {
     background: $black-dark;
-    height: 920px;
-
     &__content {
       &__header::before {
         background-color: $purple;
@@ -336,22 +512,23 @@
 
             h2 {
               color: white;
-              font-size: 30px;
+              font-size: 26px;
               line-height: 32px;
               font-weight: bold;
               cursor: pointer;
-              transition: transform 0.2s ease;
+              transition: all 0.2s ease;
+
               &:hover {
-                transform: translateY(-1px);
-                text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+                transform: scale(1.01);
+                transform-origin: center;
               }
             }
 
             p {
               margin: 16px 0;
               color: $white-light;
-              font-size: 22px;
-              line-height: 25px;
+              font-size: 18px;
+              line-height: 22px;
             }
 
             a {
@@ -410,11 +587,35 @@
         }
       }
     }
+
+    @include MQ(XL) {
+      &__content__posts {
+        .post {
+          width: 48%;
+          &:nth-of-type(3) {
+            display: none;
+          }
+        }
+      }
+    }
+
+    @include MQ(L) {
+      &__content__posts {
+        flex-wrap: wrap;
+        .post {
+          width: 100%;
+          margin-bottom: 10%;
+          &:nth-of-type(3) {
+            display: block;
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
   }
 
   &__gallery {
     background-color: $background;
-    height: 970px;
 
     &__content {
       &__photos {
@@ -458,71 +659,64 @@
         }
 
       }
+    }
 
-      &__button {
-        display: inline-flex;
-        cursor: pointer;
-        float: right;
-        position: relative;
-        align-items: center;
-        padding-right: 30px;
-        margin-top: 30px;
-        text-decoration: none;
-
-        p {
-          color: white;
-          font-size: 34px;
-          letter-spacing: 0.05em;
-
+    @include MQ(L) {
+      &__content__photos {
+          grid-template-columns: auto auto;
+        grid-auto-rows: 250px;
         }
+    }
 
-        img {
-          position: absolute;
-          right: 0;
-          transition: right 0.2s ease;
-          transform: scale(1.4);
-          transform-origin: center;
-        }
-
-        &:hover img {
-          right: -6px;
-        }
+    @include MQ(M) {
+      &__content__photos {
+        grid-template-columns: auto;
+        grid-auto-rows: 250px;
       }
     }
   }
 
   &__contact {
-    height: 200px;
     background-image: linear-gradient(90deg, #6500E0 0%, #9E1FDA 50%, #D43F8D 100%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+    &__content {
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      padding: 40px 30px;
+      h2 {
+        color: white;
+        font-size: 50px;
+        line-height: 50px;
+        letter-spacing: 0.05em;
+      }
 
-    h2 {
-      color: white;
-      font-size: 50px;
-      line-height: 50px;
-      letter-spacing: 0.05em;
-    }
+      a {
+        color: white;
+        margin-top: 20px;
+        font-size: 28px;
+        padding: 6px 20px;
+        letter-spacing: 0.05em;
+        border: white solid 3px;
+        border-radius: $border-radius--small;
+        cursor: pointer;
+        text-decoration: none;
+        transition: transform 0.6s ease;
 
-    a {
-      color: white;
-      margin-top: 20px;
-      font-size: 28px;
-      padding: 6px 20px;
-      letter-spacing: 0.05em;
-      border: white solid 3px;
-      border-radius: $border-radius--small;
-      cursor: pointer;
-      text-decoration: none;
-      transition: transform 0.6s ease;
-
-      &:hover {
-        transform: scale(1.05);
-        box-shadow: 0 0 10px;
+        &:hover {
+          transform: scale(1.05);
+          box-shadow: 0 0 10px;
+        }
       }
     }
+
+    @include MQ(M) {
+      text-align: center;
+      &__content {
+      }
+    }
+
   }
 }
 
@@ -536,9 +730,21 @@
   &__content {
     width: 100%;
     max-width: 1440px;
-    padding: 100px 120px;
+    padding: 100px 100px;
     box-sizing: border-box;
     height: 100%;
+
+    @include MQ(XL) {
+      padding: 100px 100px;
+    }
+
+    @include MQ(L) {
+      padding: 100px 80px;
+    }
+
+    @include MQ(M) {
+      padding: 100px 40px;
+    }
   }
 }
 
@@ -562,8 +768,6 @@
     background-color: $magenta;
   }
 }
-
-
 
 .tag {
   height: 34px;
@@ -595,5 +799,35 @@
   }
   100% {
     filter: hue-rotate(360deg);
+  }
+}
+
+.see-more-button {
+  display: inline-flex;
+  cursor: pointer;
+  float: right;
+  position: relative;
+  align-items: center;
+  padding-right: 30px;
+  margin-top: 30px;
+  text-decoration: none;
+
+  p {
+    color: white;
+    font-size: 34px;
+    letter-spacing: 0.05em;
+
+  }
+
+  img {
+    position: absolute;
+    right: 0;
+    transition: right 0.2s ease;
+    transform: scale(1.4);
+    transform-origin: center;
+  }
+
+  &:hover img {
+    right: -6px;
   }
 }

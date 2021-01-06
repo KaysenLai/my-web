@@ -5,25 +5,31 @@
     <title>Chaokai Lai's web</title>
     <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
-
-
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
 
     <nav class="main-nav">
-        <div class="nav-content">
-            <a href="#home">
-                <img class="nav-log" src="images/nav-logo.png" alt="navigation logo">
+        <div class="main-nav__container">
+            <a class="main-nav__container__logo" href="#home">
+                <img src="images/nav-logo.png" alt="navigation logo">
             </a>
+            <div class="main-nav__container__mask"></div>
+            <div class="main-nav__container__menu">
+                <ul>
+                    <li><a href="#home" class="navigation">home</a></li>
+                    <li><a href="#resume" class="navigation">resume</a></li>
+                    <li><a href="#blog" class="navigation">blog</a></li>
+                    <li><a href="#gallery" class="navigation">gallery</a></li>
+                    <li><a href="#contact" class="navigation">contact</a></li>
+                </ul>
+            </div>
+            <div class="main-nav__container__menu-icons">
+                <img class="menu-icon" src="images/menu.svg" alt="">
+                <img class="close-icon" src="images/menu-close.svg" alt="">
+            </div>
 
-            <ul>
-                <li><a href="#home" class="navigation">home</a></li>
-                <li><a href="#resume" class="navigation">resume</a></li>
-                <li><a href="#blog" class="navigation">blog</a></li>
-                <li><a href="#gallery" class="navigation">gallery</a></li>
-                <li><a href="#contact" class="navigation">contact</a></li>
-            </ul>
         </div>
     </nav>
 
@@ -38,10 +44,11 @@
                 <div class="home__header__intro">
                     <div class="home__header__intro-content">
                         <div class="home__header__intro-content__text">
-                            <h2>i’m a <span>web developer</span></h2>
+                            <h2 class="home__header__intro-content__text--desktop">i’m a <span>web developer</span></h2>
+                            <h2 class="home__header__intro-content__text--mobile">i’m a<br><span>web developer</span></h2>
                             <div class="home__header__intro-content__text__wrap">
                                 <h3>chaokai lai</h3>
-                                <button>resume</button>
+                                <a href="#resume"><button>resume</button></a>
                             </div>
                         </div>
                     </div>
@@ -181,6 +188,10 @@
                             </div>
                         </div>
                     </div>
+                    <a class="home__blog__content__button see-more-button" href="#blog">
+                        <p>See More</p>
+                        <img src="images/read-more-arrow.svg" alt="read-more-arrow">
+                    </a>
                 </div>
             </div>
 
@@ -195,7 +206,7 @@
                         <div class="photo"></div>
                         <div class="photo"></div>
                     </div>
-                    <a class="home__gallery__content__button" href="#gallery">
+                    <a class="home__gallery__content__button see-more-button" href="#gallery">
                         <p>See More</p>
                         <img src="images/read-more-arrow.svg" alt="read-more-arrow">
                     </a>
@@ -203,8 +214,10 @@
             </div>
 
             <div class="home__contact">
-                <h2>feel free to contact me</h2>
-                <a href="#contact">contact now</a>
+                <div class="home__contact__content">
+                    <h2>feel free to contact me</h2>
+                    <a href="#contact">contact now</a>
+                </div>
             </div>
         </section>
 

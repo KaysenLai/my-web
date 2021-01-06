@@ -39,8 +39,6 @@ function removeCurrentPage() {
 function hashNotFound(hash) {
     const hashText = hash.substring(1) // eg: turn "#home" to "home"
     for( let pageName of pageNames) {
-        console.log(pageName)
-        console.log(hashText)
         if (pageName === hashText)
             return false
     }
