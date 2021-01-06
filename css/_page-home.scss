@@ -831,3 +831,114 @@
     right: -6px;
   }
 }
+
+.home__project__popups {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0,0,0,0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.5s ease;
+  z-index: 10;
+  visibility: hidden;
+  opacity: 0;
+
+  .popup-box {
+    width: 500px;
+    height: 800px;
+    background-color: white;
+    position: relative;
+    box-shadow: rgba(0,0,0,0.25) 5px 5px 10px;
+
+    .popup {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+
+      &__image {
+        width: 100%;
+        height: 50%;
+        overflow: hidden;
+
+        img {
+          width: 100%;
+        }
+      }
+
+      &__text {
+        padding: 2em;
+        h1{
+          font-size: 3em;
+          line-height: 1.6em;
+        }
+        p{
+          font-size: 1.2em;
+          line-height: 1.2em;
+        }
+
+        a {
+          margin: 60px auto 0 auto;
+          width: 8em;
+          height: 3.6rem;
+          display: block;
+          text-decoration: none;
+          font-size: 1.6em;
+          color: orange;
+          line-height: 2.1em;
+          transition: all 0.5s ease;
+          border: orange solid 2px;
+          text-align: center;
+
+          &:hover {
+            color: white;
+            background-color: orange;
+            transition: all 0.5s ease;
+          }
+        }
+      }
+
+
+    }
+
+    &__close-button {
+      a {
+        text-align: right;
+        color: white;
+        font-weight: bold;
+        text-decoration: none;
+        font-size: 1.25em;
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding-top: 30px;
+        padding-right: 50px;
+        z-index: 1;
+        transition: all 0.5s ease;
+
+        &:before {
+          content: "\2716";
+          padding-right: 5px;
+        }
+
+        &:hover{
+          color:orange;
+          transition: all 0.4s ease;
+        }
+      }
+    }
+  }
+}
+
+body.show-popup {
+  overflow: hidden; /* Temporarily disables page scrolling */
+
+  .home__project__popups {
+    visibility: visible;
+    opacity: 1;
+  }
+}

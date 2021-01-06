@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*********************
 *media queries
 ***********************/
@@ -713,6 +714,103 @@
 }
 .see-more-button:hover img {
   right: -6px;
+}
+
+.home__project__popups {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.5s ease;
+  z-index: 10;
+  visibility: hidden;
+  opacity: 0;
+}
+.home__project__popups .popup-box {
+  width: 500px;
+  height: 800px;
+  background-color: white;
+  position: relative;
+  box-shadow: rgba(0, 0, 0, 0.25) 5px 5px 10px;
+}
+.home__project__popups .popup-box .popup {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.home__project__popups .popup-box .popup__image {
+  width: 100%;
+  height: 50%;
+  overflow: hidden;
+}
+.home__project__popups .popup-box .popup__image img {
+  width: 100%;
+}
+.home__project__popups .popup-box .popup__text {
+  padding: 2em;
+}
+.home__project__popups .popup-box .popup__text h1 {
+  font-size: 3em;
+  line-height: 1.6em;
+}
+.home__project__popups .popup-box .popup__text p {
+  font-size: 1.2em;
+  line-height: 1.2em;
+}
+.home__project__popups .popup-box .popup__text a {
+  margin: 60px auto 0 auto;
+  width: 8em;
+  height: 3.6rem;
+  display: block;
+  text-decoration: none;
+  font-size: 1.6em;
+  color: orange;
+  line-height: 2.1em;
+  transition: all 0.5s ease;
+  border: orange solid 2px;
+  text-align: center;
+}
+.home__project__popups .popup-box .popup__text a:hover {
+  color: white;
+  background-color: orange;
+  transition: all 0.5s ease;
+}
+.home__project__popups .popup-box__close-button a {
+  text-align: right;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 1.25em;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding-top: 30px;
+  padding-right: 50px;
+  z-index: 1;
+  transition: all 0.5s ease;
+}
+.home__project__popups .popup-box__close-button a:before {
+  content: "✖";
+  padding-right: 5px;
+}
+.home__project__popups .popup-box__close-button a:hover {
+  color: orange;
+  transition: all 0.4s ease;
+}
+
+body.show-popup {
+  overflow: hidden;
+  /* Temporarily disables page scrolling */
+}
+body.show-popup .home__project__popups {
+  visibility: visible;
+  opacity: 1;
 }
 
 * {
