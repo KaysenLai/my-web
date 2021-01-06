@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <title>Chaokai Lai's web</title>
     <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
 
 
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
 
-    <nav>
+    <nav class="main-nav">
         <div class="nav-content">
             <a href="#home">
                 <img class="nav-log" src="images/nav-logo.png" alt="navigation logo">
@@ -149,7 +150,7 @@
                         <div class="post">
                             <div class="post__img"></div>
                             <div class="post__text">
-                                <h2>Learning react and learning react and learning react </h2>
+                                <a href=""><h2>Learning js and learning js and learning js</h2></a>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                                 <a>
                                     <p>Read More</p>
@@ -166,7 +167,7 @@
                         <div class="post">
                             <div class="post__img"></div>
                             <div class="post__text">
-                                <h2>Learning react and learning react and learning react </h2>
+                                <a href=""><h2>Learning node and learning node and learning node</h2></a>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                                 <a>
                                     <p>Read More</p>
@@ -178,7 +179,6 @@
                                 </div>
                                 <div class="post__text__time">January 04, 2021</div>
                             </div>
-
                         </div>
                     </div>
                 </div>
@@ -187,10 +187,25 @@
             <div class="home__gallery home-section">
                 <div class="home__gallery__content home-section__content">
                     <h2 class="home__gallery__content__header home-section__content__header header-with-block">gallery</h2>
-                    <div class="home__gallery__content__photos"></div>
+                    <div class="home__gallery__content__photos">
+                        <div class="photo"></div>
+                        <div class="photo"></div>
+                        <div class="photo"></div>
+                        <div class="photo"></div>
+                        <div class="photo"></div>
+                        <div class="photo"></div>
+                    </div>
+                    <a class="home__gallery__content__button">
+                        <p>See More</p>
+                        <img src="images/read-more-arrow.svg" alt="read-more-arrow">
+                    </a>
                 </div>
             </div>
 
+            <div class="home__contact">
+                <h2>feel free to contact me</h2>
+                <a>contact now</a>
+            </div>
         </section>
 
         <section class="page resume" data-id="resume">
@@ -210,6 +225,62 @@
         <script src="js/main.js"></script>
     </div>
 
-    <footer></footer>
+    <footer>
+        <section class="footer__about-the-web">
+            <h2>About the web</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna </p>
+            <div class="socialIcons">
+                <a href=""><span class= "fab fa-facebook-f"></span></a>
+                <a href=""><span class= "fab fa-twitter"></span></a>
+                <a href=""><span class= "fab fa-instagram"></span></a>
+                <a href=""><span class= "fab fa-youtube"></span></a>
+            </div>
+        </section>
+
+        <section class="footer__links">
+            <h2>Links</h2>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="activity.html">Activity</a>
+                    </li>
+                    <li>
+                        <a href="room.html">Room</a>
+                    </li>
+                    <li>
+                        <a href="service.html">Service</a>
+                    </li>
+                    <li>
+                        <a href="bookpage.html">Book</a>
+                    </li>
+                    <li>
+                        <a href="contact.html">Contact us</a>
+                    </li>
+                </ul>
+            </nav>
+
+        </section>
+
+        <section class="footer__contact">
+            <h2>Address</h2>
+            <div class= "content-footer">
+                <div class = "place">
+                    <span class="fas fa-map-marker-alt"></span>
+                    <span class="text">: 266 George St, Brisbane City QLD 4000</span>
+                </div>
+                <div class = "phone">
+                    <span class="fas fa-phone"></span>
+                    <span class="text">: +61 0488 888 888</span>
+                </div>
+                <div class = "email">
+                    <span class="fas fa-envelope"></span>
+                    <span class="text">: chaokai.lai@gmail.com</span>
+                </div>
+            </div>
+        </section>
+    </footer>
 </body>
 </html>
