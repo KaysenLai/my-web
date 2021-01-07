@@ -44,10 +44,19 @@ body {
     align-items: center;
     padding: 0 120px;
 
-    &__logo img {
-      width: 80px;
-      height: auto;
+    &__logo {
+      width: 100px;
+      height: 43px;
+      background-image : url('../images/logo-css-sprites.png');
+      animation-fill-mode: forwards;
+
+      &:hover {
+        animation: moveY 2s steps(49);
+        cursor: pointer;
+        animation-fill-mode: forwards;
+      }
     }
+
 
     &__menu{
       ul {
@@ -92,10 +101,20 @@ body {
     }
   }
 
+  @include MQ(XL) {
+    &__container__menu ul li{
+      margin-left: 10px;
+
+      a {
+        padding: 0 15px;
+      }
+    }
+  }
+
   @include MQ(L) {
     position: fixed;
     &__container {
-      padding: 0 100px;
+      padding: 0 80px;
 
       &__menu {
         width: 300px;
@@ -116,7 +135,7 @@ body {
 
           li {
             margin: 0 0 20px 0;
-            }
+          }
         }
 
         &.active {
@@ -144,17 +163,12 @@ body {
 
   }
 
-  @include MQ(L) {
-    &__container {
-      padding: 0 80px;
-    }
-  }
-
   @include MQ(M) {
     &__container {
       padding: 0 40px;
     }
   }
+
 
 }
 

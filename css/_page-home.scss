@@ -942,3 +942,9 @@ body.show-popup {
     opacity: 1;
   }
 }
+
+
+@keyframes moveY{
+  from{ background-position-y: 0; }
+  to{ background-position-y:-2107px; }
+}

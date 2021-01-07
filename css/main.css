@@ -813,6 +813,14 @@ body.show-popup .home__project__popups {
   opacity: 1;
 }
 
+@keyframes moveY {
+  from {
+    background-position-y: 0;
+  }
+  to {
+    background-position-y: -2107px;
+  }
+}
 * {
   margin: 0;
   padding: 0;
@@ -851,9 +859,16 @@ body button {
   align-items: center;
   padding: 0 120px;
 }
-.main-nav__container__logo img {
-  width: 80px;
-  height: auto;
+.main-nav__container__logo {
+  width: 100px;
+  height: 43px;
+  background-image: url("../images/logo-css-sprites.png");
+  animation-fill-mode: forwards;
+}
+.main-nav__container__logo:hover {
+  animation: moveY 2s steps(49);
+  cursor: pointer;
+  animation-fill-mode: forwards;
 }
 .main-nav__container__menu ul {
   display: flex;
@@ -890,12 +905,20 @@ body button {
 .main-nav__container__menu-icons .close-icon {
   display: none;
 }
+@media screen and (max-width: 1440px) {
+  .main-nav__container__menu ul li {
+    margin-left: 10px;
+  }
+  .main-nav__container__menu ul li a {
+    padding: 0 15px;
+  }
+}
 @media screen and (max-width: 1024px) {
   .main-nav {
     position: fixed;
   }
   .main-nav__container {
-    padding: 0 100px;
+    padding: 0 80px;
   }
   .main-nav__container__menu {
     width: 300px;
@@ -934,11 +957,6 @@ body button {
   }
   .main-nav__container__menu-icons .menu-icon {
     display: block;
-  }
-}
-@media screen and (max-width: 1024px) {
-  .main-nav__container {
-    padding: 0 80px;
   }
 }
 @media screen and (max-width: 768px) {

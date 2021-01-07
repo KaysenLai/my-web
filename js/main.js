@@ -15,47 +15,8 @@ for (let i = 0; i < projects.length; i++) {
     }
 }
 
-for (var i = 1; i <= 3; i++) {
-    $("#content article:nth-of-type("+i+")").click(function(event){
-        $("body").toggleClass("show-popup");
-        $("#popup-box article").css("display", "none");
-        $("#popup-box article:nth-of-type("+i+")").css("display", "block");
-        event.preventDefault();
-    });
-}
 
-$(document).ready(function() {
 
-    // for (var i = 1; i <= 3; i++) {
-    //     $("#content article:nth-of-type("+i+")").click(function(event){
-    //         $("body").toggleClass("show-popup");
-    //         $("#popup-box article").css("display", "none");
-    //         $("#popup-box article:nth-of-type("+i+")").css("display", "block");
-    //         event.preventDefault();
-    //     });
-    // }
-
-    $("#content article:nth-of-type(1)").click(function(event){
-        $("body").toggleClass("show-popup");
-        $("#popup-box article").css("display", "none");
-        $("#popup-box article:nth-of-type(1)").css("display", "block");
-        event.preventDefault();
-    });
-
-    $("#content article:nth-of-type(2)").click(function(event){
-        $("body").toggleClass("show-popup");
-        $("#popup-box article").css("display", "none");
-        $("#popup-box article:nth-of-type(2)").css("display", "block");
-        event.preventDefault();
-    });
-
-    $("#content article:nth-of-type(3)").click(function(event){
-        $("body").toggleClass("show-popup");
-        $("#popup-box article").css("display", "none");
-        $("#popup-box article:nth-of-type(3)").css("display", "block");
-        event.preventDefault();
-    });
-});
 
 
 
