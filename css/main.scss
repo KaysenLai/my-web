@@ -301,8 +301,11 @@ body {
         }
       }
 
-      &__icon img{
-        display: none;
+      &__icon {
+        padding: 0;
+        img{
+          display: none;
+        }
       }
     }
   }

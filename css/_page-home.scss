@@ -79,44 +79,12 @@
               font-size: 60px;
             }
 
-            button {
+            .ghost-button {
               margin-left: 20px;
-              border: white solid 3px;
-              border-radius: 8px;
-              color: white;
-              width: 152px;
-              line-height: 46px;
-              font-size: 30px;
-              cursor: pointer;
-              letter-spacing: 0.1em;
-              background: none;
-              position: relative;
-              box-sizing: border-box;
-              transition: border 0.6s ease;
-
-              &::before {
-                content: 'resume';
-                border-radius: 7px;
-                width: 152px;
-                line-height: 52px;
-                background-image: linear-gradient(305.78deg, #6500E0 0%, #9E1FDA 53.99%, #D43F8D 100%);
-                position: absolute;
-                opacity: 0;
-                top: -3px;
-                left: -3px;
-                transition: opacity 0.6s ease;
-              }
-
-              &:hover{
-                border: transparent solid 3px;
-                &::before {
-                opacity: 1;
-              }}
-
             }
+
           }
         }
-
       }
     }
 
@@ -802,6 +770,42 @@
   }
 }
 
+.ghost-button {
+  border: white solid 3px;
+  border-radius: 8px;
+  color: white;
+  width: 152px;
+  line-height: 46px;
+  font-size: 30px;
+  cursor: pointer;
+  letter-spacing: 0.1em;
+  background: none;
+  position: relative;
+  box-sizing: border-box;
+  transition: border 0.6s ease;
+
+  &::before {
+    content: 'resume';
+    border-radius: 7px;
+    width: 152px;
+    line-height: 52px;
+    background-image: linear-gradient(305.78deg, #6500E0 0%, #9E1FDA 53.99%, #D43F8D 100%);
+    position: absolute;
+    opacity: 0;
+    top: -3px;
+    left: -3px;
+    transition: opacity 0.6s ease;
+  }
+
+  &:hover{
+    border: transparent solid 3px;
+    &::before {
+      opacity: 1;
+    }
+  }
+}
+
+
 .see-more-button {
   display: inline-flex;
   cursor: pointer;
@@ -848,86 +852,128 @@
   opacity: 0;
 
   .popup-box {
-    width: 500px;
-    height: 800px;
-    background-color: white;
+    width: 600px;
+    height: 80vh;
     position: relative;
     box-shadow: rgba(0,0,0,0.25) 5px 5px 10px;
+    border-radius: $border-radius--small;
+    overflow: hidden;
+    background-color: $black-main;
+    &__close-button {
+      a {
+        color: white;
+        text-align: right;
+        text-decoration: none;
+        font-size: 30px;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        z-index: 1;
+        transition: all 0.5s ease;
+        letter-spacing: 0.05em;
+        text-shadow: #181818 2px 2px 5px;
+
+        &::after {
+          content: "\2716";
+          padding-left: 5px;
+        }
+
+        &:hover{
+          cursor: pointer;
+          color: $magenta-light;
+          transition: all 0.4s ease;
+        }
+      }
+    }
 
     .popup {
       width: 100%;
       height: 100%;
       display: flex;
       flex-direction: column;
+      position: relative;
 
       &__image {
         width: 100%;
-        height: 50%;
+        height: 40%;
         overflow: hidden;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
 
-        img {
-          width: 100%;
+        &:nth-of-type(1) {
+          background-image: url("../images/project-img01.jpg");
+        }
+
+        &:nth-of-type(1) {
+          background-image: url("../images/project-img02.jpg");
         }
       }
 
       &__text {
-        padding: 2em;
-        h1{
-          font-size: 3em;
-          line-height: 1.6em;
+        padding: 10px 40px;
+        height: 60%;
+        box-sizing: border-box;
+        color: white;
+
+        h3{
+          margin-top: 20px;
+          font-size: 30px;
+          line-height: 50px;
+          letter-spacing: 0.05em;
         }
+
         p{
-          font-size: 1.2em;
-          line-height: 1.2em;
+          font-size: 18px;
+          line-height: 22px;
+          font-family: "Roboto", sans-serif;
         }
 
-        a {
-          margin: 60px auto 0 auto;
-          width: 8em;
-          height: 3.6rem;
-          display: block;
-          text-decoration: none;
-          font-size: 1.6em;
-          color: orange;
-          line-height: 2.1em;
-          transition: all 0.5s ease;
-          border: orange solid 2px;
-          text-align: center;
+        .ghost-button {
+          position: absolute;
+          bottom: 32px;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 180px;
 
-          &:hover {
-            color: white;
-            background-color: orange;
-            transition: all 0.5s ease;
+          &::before {
+            content: 'see it now';
+            width: 180px;
           }
         }
       }
-
-
     }
 
-    &__close-button {
-      a {
-        text-align: right;
-        color: white;
-        font-weight: bold;
-        text-decoration: none;
-        font-size: 1.25em;
-        position: absolute;
-        top: 0;
-        right: 0;
-        padding-top: 30px;
-        padding-right: 50px;
-        z-index: 1;
-        transition: all 0.5s ease;
-
-        &:before {
-          content: "\2716";
-          padding-right: 5px;
+    @include MQ(L) {
+      width: 85%;
+      height: 70vh;
+      .popup {
+        &__image {
+          height: 200px;
         }
 
-        &:hover{
-          color:orange;
-          transition: all 0.4s ease;
+        &__text {
+          padding: 10px 30px;
+
+          h3 {
+            font-size: 26px;
+            line-height: 40px;
+          }
+
+          p {
+            font-size: 18px;
+            line-height: 22px;
+          }
+
+          .ghost-button {
+            font-size: 24px;
+            width: 150px;
+            &::before {
+              width: 150px;
+              font-size: 24px;
+              content: 'see it now';
+            }
+          }
         }
       }
     }
