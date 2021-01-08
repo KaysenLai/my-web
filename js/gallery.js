@@ -1,12 +1,7 @@
 const defaultPhotoPath = 'images/gallery/'
-
+let currentImgId;
 
 createGrid()
-// function createPhotoBrowser() {
-//     const photoBrowser = document.querySelector('.gallery__content__photo-browser')
-//
-// }
-
 
 function createGrid() {
     const photoGrid = document.querySelector('.gallery__content__photo-grid')
@@ -29,28 +24,28 @@ function createPhotoItem(photoData) {
 
 function bindImgTag(imgTag) {
     imgTag.onclick = (e) => {
-        const imgId = parseInt(e.target.getAttribute('photo-id'))
-        const visibleIdList = getVisibleIdList()
-        handleClickPhoto(imgId)
+        const imgId = parseInt(e.target.getAttribute('img-id'))
+        showPhotoById(imgId)
         photoBrowser.classList.add('visible')
     }
 }
 
 function creatImgTag(photoData) {
     const imgTag = document.createElement('img')
-    imgTag.setAttribute('photo-id', photoData['id'].toString())
+    imgTag.setAttribute('img-id', photoData['id'].toString())
     imgTag.src = defaultPhotoPath + photoData['filename']
     imgTag.alt = photoData['filename']
     return imgTag
 }
 
-function handleClickPhoto(imgId) {
-    const clickedPhotoData = galleryPhotos[imgId - 1]
+function showPhotoById(imgId) {
+    const photoData = galleryPhotos[imgId - 1]
+    console.log(photoData)
     const imageContainer = document.querySelector('.photo-browser__image-container')
-    const imgTag = creatImgTag(clickedPhotoData)
-    console.log(imgTag)
+    const imgTag = creatImgTag(photoData)
     imageContainer.innerHTML = ''
     imageContainer.appendChild(imgTag)
+    currentImgId = imgId
 }
 
 function getVisibleIdList() {
@@ -59,19 +54,56 @@ function getVisibleIdList() {
     for (let photoItem of photoItems) {
         if (photoItem.style.display !== 'none') {
             const photo = photoItem.querySelector('img')
-            visibleIdList.push(parseInt(photo.getAttribute('photo-id')))
+            visibleIdList.push(parseInt(photo.getAttribute('img-id')))
         }
     }
     return visibleIdList
 }
 
 const photoBrowser = document.querySelector('.photo-browser')
+const photoBrowserBackGround = document.querySelector('.photo-browser__background')
 const photoBrowserCloseBtn = document.querySelector('.photo-browser__nav__close-button')
+const preBtn = document.querySelector('.photo-browser__nav__prePhoto')
+const nextBtn = document.querySelector('.photo-browser__nav__nextPhoto')
 
-photoBrowserCloseBtn.onclick = () => {
+photoBrowserCloseBtn.onclick = () => 
     photoBrowser.classList.remove('visible')
+photoBrowserBackGround.onclick = () =>
+    photoBrowser.classList.remove('visible')
+
+
+preBtn.onclick = () => {
+    const visibleIdList = getVisibleIdList()
+    let currentImgIndex = getIndexInVisibleIdList(visibleIdList)
+    const prePhotoImgIndex = currentImgIndex - 1
+    const prePhotoImgId = visibleIdList[prePhotoImgIndex]
+    if (isFirstOrEnd(prePhotoImgIndex, visibleIdList))
+        return
+    showPhotoById(prePhotoImgId)
+    currentImgId = prePhotoImgId
 }
 
+nextBtn.onclick = () => {
+    const visibleIdList = getVisibleIdList()
+    let currentImgIndex = getIndexInVisibleIdList(visibleIdList)
+    const nextPhotoImgIndex = currentImgIndex + 1
+    const nextPhotoImgId = parseInt(visibleIdList[nextPhotoImgIndex])
+    if (isFirstOrEnd(nextPhotoImgIndex, visibleIdList))
+        return
+    showPhotoById(nextPhotoImgId)
+    currentImgId = nextPhotoImgId
+}
+
+function getIndexInVisibleIdList(visibleIdList) {
+    for (let i = 0; i < visibleIdList.length; i++) {
+        if (visibleIdList[i] === currentImgId)
+            return i
+    }
+}
+
+function isFirstOrEnd(imgIndex, visibleIdList) {
+    return imgIndex === -1 || imgIndex === visibleIdList.length
+}
 
 
 
@@ -86,9 +118,7 @@ let iso = new Isotope( '.gallery__content__photo-grid', {
     layoutMode: 'masonry'
 });
 
-setTimeout(()=> {
-    iso.arrange({ filter: '*' });
-},1000)
+
 
 // bind filter button click
 const filtersElem = document.querySelector('.filters-button-group');
@@ -98,14 +128,19 @@ filtersElem.addEventListener( 'click', function( event ) {
 });
 
 // change is-checked class on buttons
-const buttonGroups = document.querySelectorAll('.button-group');
-for (let i = 0; i < buttonGroups.length; i++ ) {
+const buttonGroups = document.querySelectorAll('.gallery__content__button-group');
+for ( let i=0; i < buttonGroups.length; i++ ) {
     const buttonGroup = buttonGroups[i];
     radioButtonGroup( buttonGroup );
 }
 
 function radioButtonGroup( buttonGroup ) {
     buttonGroup.addEventListener( 'click', function( event ) {
+        // only work with buttons
+        if ( !matchesSelector( event.target, 'button' ) ) {
+            return;
+        }
+        console.log(event.target)
         buttonGroup.querySelector('.is-checked').classList.remove('is-checked');
         event.target.classList.add('is-checked');
     });

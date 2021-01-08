@@ -13,7 +13,12 @@ window.onhashchange = () => {
 
 const pageNames = ['home', 'resume', 'blog', 'gallery','contact']
 
-function switchPage(hash){
+function switchPage(hash) {
+    if (hash === "#gallery") {
+        setTimeout(() => {
+            iso.arrange({ filter: '*' })
+        }, 750)
+    }
     const hashText = hash.substring(1) // eg: turn "#home" to "home"
     const hashPage = document.querySelector("section[data-id=" + hashText + "]")
     if (hashNotFound(hash)) {
