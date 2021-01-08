@@ -1,12 +1,12 @@
+const defaultPhotoPath = 'images/gallery/'
 
-(function () {
-    createGrid()
-})();
 
+createGrid()
 // function createPhotoBrowser() {
 //     const photoBrowser = document.querySelector('.gallery__content__photo-browser')
 //
 // }
+
 
 function createGrid() {
     const photoGrid = document.querySelector('.gallery__content__photo-grid')
@@ -18,28 +18,39 @@ function createGrid() {
 
 function createPhotoItem(photoData) {
     const photoItem = document.createElement('div')
-
     photoItem.classList.add('photo-item')
     for (let category of photoData['category'])
         photoItem.classList.add(category)
-    photoItem.appendChild(createImgTag(photoData))
-
+    const imgTag = creatImgTag(photoData)
+    bindImgTag(imgTag)
+    photoItem.appendChild(imgTag)
     return photoItem
 }
 
-function createImgTag(photoData) {
-    const defaultPhotoPath = 'images/gallery/'
+function bindImgTag(imgTag) {
+    imgTag.onclick = (e) => {
+        const imgId = parseInt(e.target.getAttribute('photo-id'))
+        const visibleIdList = getVisibleIdList()
+        handleClickPhoto(imgId)
+        photoBrowser.classList.add('visible')
+    }
+}
+
+function creatImgTag(photoData) {
     const imgTag = document.createElement('img')
     imgTag.setAttribute('photo-id', photoData['id'].toString())
     imgTag.src = defaultPhotoPath + photoData['filename']
     imgTag.alt = photoData['filename']
-
-    imgTag.onclick = (e) => {
-        const imgTagId = parseInt(e.target.getAttribute('photo-id'))
-        const visibleIdList = getVisibleIdList()
-
-    }
     return imgTag
+}
+
+function handleClickPhoto(imgId) {
+    const clickedPhotoData = galleryPhotos[imgId - 1]
+    const imageContainer = document.querySelector('.photo-browser__image-container')
+    const imgTag = creatImgTag(clickedPhotoData)
+    console.log(imgTag)
+    imageContainer.innerHTML = ''
+    imageContainer.appendChild(imgTag)
 }
 
 function getVisibleIdList() {
@@ -54,6 +65,12 @@ function getVisibleIdList() {
     return visibleIdList
 }
 
+const photoBrowser = document.querySelector('.photo-browser')
+const photoBrowserCloseBtn = document.querySelector('.photo-browser__nav__close-button')
+
+photoBrowserCloseBtn.onclick = () => {
+    photoBrowser.classList.remove('visible')
+}
 
 
 
