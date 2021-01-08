@@ -15,24 +15,6 @@ for (let i = 0; i < projects.length; i++) {
     }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 const menuBtn = document.querySelector('.menu-icon')
 const leftMenu = document.querySelector('.main-nav__container__menu')
 const closeBtn = document.querySelector('.close-icon')
@@ -58,6 +40,8 @@ pageMask.onclick = closeMenu
 
 for (let navigation of navigations)
     navigation.onclick = closeMenu
+
+
 
 
 

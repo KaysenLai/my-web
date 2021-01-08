@@ -856,29 +856,74 @@ body.show-popup .home__project__popups {
 /*********************
 *media queries
 ***********************/
+.main .gallery {
+  background-color: #181818;
+  min-height: 1080px;
+}
 .main .gallery__background {
   width: 100%;
   height: 300px;
-  background: pink;
+  background: url("../images/gallery-bg.jpg");
+  background-position-x: center;
+  background-position-y: center;
 }
-.main .gallery__container {
+.main .gallery__background__container {
+  width: 100%;
+  height: 100%;
+  max-width: 1140px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  color: white;
+  font-family: "Staatliches", cursive;
+  letter-spacing: 0.05em;
+  box-sizing: border-box;
+  padding-left: 44px;
+}
+.main .gallery__background__container h2 {
+  font-size: 70px;
+  position: relative;
+}
+.main .gallery__background__container h2::after {
+  content: "";
+  position: absolute;
+  background-color: #E73273;
+  width: 17px;
+  height: 97px;
+  left: -34px;
+  top: 12px;
+  border-radius: 4px;
+}
+.main .gallery__background__container h3 {
+  font-size: 30px;
+}
+.main .gallery__content {
   width: 100%;
   max-width: 1140px;
-  height: 1000px;
   margin: 0 auto;
-  border: white solid 1px;
-}
-
-* {
   box-sizing: border-box;
+  padding: 50px 0 100px 0;
+  /* ---- button ---- */
+  /* ---- button-group ---- */
 }
-
-body {
-  font-family: sans-serif;
+.main .gallery__content .photo-grid::after {
+  content: "";
+  display: block;
+  clear: both;
 }
-
-/* ---- button ---- */
-.button {
+.main .gallery__content .photo-item {
+  box-sizing: border-box;
+  width: 31%;
+  float: left;
+  margin: 1%;
+  cursor: pointer;
+}
+.main .gallery__content .photo-item img {
+  max-width: 100%;
+  height: auto;
+}
+.main .gallery__content .button {
   display: inline-block;
   padding: 10px 18px;
   margin-bottom: 10px;
@@ -892,125 +937,38 @@ body {
   text-shadow: 0 1px white;
   cursor: pointer;
 }
-
-.button:hover {
+.main .gallery__content .button:hover {
   background-color: #8CF;
   text-shadow: 0 1px rgba(255, 255, 255, 0.5);
   color: #222;
 }
-
-.button:active,
-.button.is-checked {
+.main .gallery__content .button:active,
+.main .gallery__content .button.is-checked {
   background-color: #28F;
 }
-
-.button.is-checked {
+.main .gallery__content .button.is-checked {
   color: white;
   text-shadow: 0 -1px rgba(0, 0, 0, 0.8);
 }
-
-.button:active {
+.main .gallery__content .button:active {
   box-shadow: inset 0 1px 10px rgba(0, 0, 0, 0.8);
 }
-
-/* ---- button-group ---- */
-.button-group:after {
+.main .gallery__content .button-group:after {
   content: "";
   display: block;
   clear: both;
 }
-
-.button-group .button {
+.main .gallery__content .button-group .button {
   float: left;
   border-radius: 0;
   margin-left: 0;
   margin-right: 1px;
 }
-
-.button-group .button:first-child {
+.main .gallery__content .button-group .button:first-child {
   border-radius: 0.5em 0 0 0.5em;
 }
-
-.button-group .button:last-child {
+.main .gallery__content .button-group .button:last-child {
   border-radius: 0 0.5em 0.5em 0;
-}
-
-/* ---- isotope ---- */
-.grid {
-  border: 1px solid #333;
-}
-
-/* clear fix */
-.grid:after {
-  content: "";
-  display: block;
-  clear: both;
-}
-
-/* ---- .element-item ---- */
-.element-item {
-  position: relative;
-  float: left;
-  width: 100px;
-  height: 100px;
-  margin: 5px;
-  padding: 10px;
-  background: #888;
-}
-
-.element-item > * {
-  margin: 0;
-  padding: 0;
-}
-
-.element-item.alkali {
-  background: #F00;
-  background: red;
-}
-
-.element-item.alkaline-earth {
-  background: #F80;
-  background: #ff9900;
-}
-
-.element-item.lanthanoid {
-  background: #FF0;
-  background: #ccff00;
-}
-
-.element-item.actinoid {
-  background: #0F0;
-  background: #33ff00;
-}
-
-.element-item.transition {
-  background: #0F8;
-  background: #00ff66;
-}
-
-.element-item.post-transition {
-  background: #0FF;
-  background: aqua;
-}
-
-.element-item.metalloid {
-  background: #08F;
-  background: #0066ff;
-}
-
-.element-item.diatomic {
-  background: #00F;
-  background: #3300ff;
-}
-
-.element-item.halogen {
-  background: #F0F;
-  background: #cc00ff;
-}
-
-.element-item.noble-gas {
-  background: #F08;
-  background: #ff0099;
 }
 
 * {

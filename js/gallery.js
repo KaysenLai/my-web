@@ -1,52 +1,94 @@
-// external js: isotope.pkgd.js
 
-// init Isotope
-var iso = new Isotope( '.grid', {
-    itemSelector: '.element-item',
+(function () {
+    createGrid()
+})();
+
+// function createPhotoBrowser() {
+//     const photoBrowser = document.querySelector('.gallery__content__photo-browser')
+//
+// }
+
+function createGrid() {
+    const photoGrid = document.querySelector('.gallery__content__photo-grid')
+    for (let i = 0; i < galleryPhotos.length; i++) {
+        const photoData = galleryPhotos[i]
+        photoGrid.appendChild(createPhotoItem(photoData))
+    }
+}
+
+function createPhotoItem(photoData) {
+    const photoItem = document.createElement('div')
+
+    photoItem.classList.add('photo-item')
+    for (let category of photoData['category'])
+        photoItem.classList.add(category)
+    photoItem.appendChild(createImgTag(photoData))
+
+    return photoItem
+}
+
+function createImgTag(photoData) {
+    const defaultPhotoPath = 'images/gallery/'
+    const imgTag = document.createElement('img')
+    imgTag.setAttribute('photo-id', photoData['id'].toString())
+    imgTag.src = defaultPhotoPath + photoData['filename']
+    imgTag.alt = photoData['filename']
+
+    imgTag.onclick = (e) => {
+        const imgTagId = parseInt(e.target.getAttribute('photo-id'))
+        const visibleIdList = getVisibleIdList()
+
+    }
+    return imgTag
+}
+
+function getVisibleIdList() {
+    let visibleIdList = []
+    const photoItems = document.querySelectorAll('.photo-item')
+    for (let photoItem of photoItems) {
+        if (photoItem.style.display !== 'none') {
+            const photo = photoItem.querySelector('img')
+            visibleIdList.push(parseInt(photo.getAttribute('photo-id')))
+        }
+    }
+    return visibleIdList
+}
+
+
+
+
+
+
+
+
+
+
+// init Isotope https://isotope.metafizzy.co/
+let iso = new Isotope( '.gallery__content__photo-grid', {
+    itemSelector: '.photo-item',
     layoutMode: 'masonry'
 });
 
-
-// filter functions
-var filterFns = {
-    // show if number is greater than 50
-    numberGreaterThan50: function( itemElem ) {
-        var number = itemElem.querySelector('.number').textContent;
-        return parseInt( number, 10 ) > 50;
-    },
-    // show if name ends with -ium
-    ium: function( itemElem ) {
-        var name = itemElem.querySelector('.name').textContent;
-        return name.match( /ium$/ );
-    }
-};
+setTimeout(()=> {
+    iso.arrange({ filter: '*' });
+},1000)
 
 // bind filter button click
-var filtersElem = document.querySelector('.filters-button-group');
+const filtersElem = document.querySelector('.filters-button-group');
 filtersElem.addEventListener( 'click', function( event ) {
-    // only work with buttons
-    if ( !matchesSelector( event.target, 'button' ) ) {
-        return;
-    }
-    var filterValue = event.target.getAttribute('data-filter');
-    // use matching filter function
-    filterValue = filterFns[ filterValue ] || filterValue;
+    const filterValue = event.target.getAttribute('data-filter');
     iso.arrange({ filter: filterValue });
 });
 
 // change is-checked class on buttons
-var buttonGroups = document.querySelectorAll('.button-group');
-for ( var i=0, len = buttonGroups.length; i < len; i++ ) {
-    var buttonGroup = buttonGroups[i];
+const buttonGroups = document.querySelectorAll('.button-group');
+for (let i = 0; i < buttonGroups.length; i++ ) {
+    const buttonGroup = buttonGroups[i];
     radioButtonGroup( buttonGroup );
 }
 
 function radioButtonGroup( buttonGroup ) {
     buttonGroup.addEventListener( 'click', function( event ) {
-        // only work with buttons
-        if ( !matchesSelector( event.target, 'button' ) ) {
-            return;
-        }
         buttonGroup.querySelector('.is-checked').classList.remove('is-checked');
         event.target.classList.add('is-checked');
     });
