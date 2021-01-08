@@ -100,9 +100,6 @@
   }
 }
 @media screen and (max-width: 1024px) {
-  .main .home__header {
-    padding-top: 72px;
-  }
   .main .home__header__intro-content__text {
     right: 50px;
   }
@@ -488,7 +485,6 @@
   margin-top: 50px;
 }
 .main .home__gallery__content__photos .photo {
-  cursor: pointer;
   border-radius: 10px;
   background-position: center;
   background-repeat: no-repeat;
@@ -1203,6 +1199,11 @@ body button {
 }
 .page.page--current {
   display: block;
+}
+@media screen and (max-width: 1024px) {
+  .page {
+    padding-top: 72px;
+  }
 }
 
 .footer {

@@ -116,7 +116,6 @@
     }
 
     @include MQ(L) {
-      padding-top: 72px;
       &__intro {
         &-content {
           &__text {
@@ -591,7 +590,6 @@
         margin-top: 50px;
 
         .photo {
-          cursor: pointer;
           border-radius: $border-radius--small;
           background-position: center;
           background-repeat: no-repeat;

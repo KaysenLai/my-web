@@ -29,7 +29,7 @@ body {
   background-color: $black-main;
   position: relative;
   z-index: 10;
-  height: 72px;
+  height: $main-nav-height;
   box-shadow: 0 4px 20px 12px rgba(0, 0, 0, 0.5);
   width: 100%;
 
@@ -118,10 +118,10 @@ body {
 
       &__menu {
         width: 300px;
-        height: calc(100% - 72px);
+        height: calc(100% - $main-nav-height);
         background: $black-dark;
         position: fixed;
-        top: 72px;
+        top: $main-nav-height;
         left: -300px;
         transition: left 0.3s ease;
         box-shadow: black 11px 14px 20px;
@@ -146,10 +146,10 @@ body {
       &__mask {
         display: none;
         width: 100%;
-        height: calc(100% - 72px);
+        height: calc(100% - $main-nav-height);
         background: rgba(0, 0 ,0 , 0.3);
         position: fixed;
-        top: 72px;
+        top: $main-nav-height;
         left: 0;
       }
 
@@ -168,8 +168,6 @@ body {
       padding: 0 40px;
     }
   }
-
-
 }
 
 .page {
@@ -184,6 +182,10 @@ body {
 
   &.page--current {
     display: block;
+  }
+
+  @include MQ(L) {
+    padding-top: $main-nav-height;
   }
 }
 
