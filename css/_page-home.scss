@@ -66,10 +66,10 @@
           h2 {
             font-size: 90px;
             line-height: 112px;
-          }
 
-          &--mobile {
-            display: none;
+            br {
+              display: none;
+            }
           }
 
           &__wrap {
@@ -147,6 +147,9 @@
               font-size: 52px;
               line-height: 65px;
 
+              br {
+                display: block;
+              }
               span {
                 font-size: 52px;
                 line-height: 65px;
@@ -155,17 +158,11 @@
             h3 {
               font-size: 40px;
             }
-            &--desktop {
-              display: none;
-            }
-            &--mobile {
-              display: block;
-            }
             &__wrap {
               margin-top: 30px;
               flex-direction: column;
               align-items: flex-start;
-              button {
+              .ghost-button {
                 margin-top: 10px;
                 margin-left: 0;
               }
@@ -300,16 +297,16 @@
       }
     }
 
-    @include MQ(XL) {
-      &__content__cards {
-        .skill-card{
-          width: 31%;
-          &:nth-of-type(4) {
-            display: none;
-          }
-        }
-      }
-    }
+    //@include MQ(XL) {
+    //  &__content__cards {
+    //    .skill-card{
+    //      width: 31%;
+    //      &:nth-of-type(4) {
+    //        display: none;
+    //      }
+    //    }
+    //  }
+    //}
     @include MQ(L) {
       &__content__cards {
         flex-wrap: wrap;
@@ -687,8 +684,8 @@
 
   }
 }
-
-.home-section {
+// contanier
+.home-container {
   width: 100%;
   display: flex;
   justify-content: center;
@@ -704,6 +701,10 @@
 
     @include MQ(XL) {
       padding: 100px 100px;
+
+      & > h2 {
+        font-size: 50px;
+      }
     }
 
     @include MQ(L) {
@@ -900,14 +901,14 @@
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
+      }
 
-        &:nth-of-type(1) {
-          background-image: url("../images/project-img01.jpg");
-        }
+      &:nth-of-type(1) .popup__image {
+        background-image: url("../images/project-img01.jpg");
+      }
 
-        &:nth-of-type(1) {
-          background-image: url("../images/project-img02.jpg");
-        }
+      &:nth-of-type(2) .popup__image {
+        background-image: url("../images/project-img02.jpg");
       }
 
       &__text {

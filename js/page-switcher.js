@@ -25,7 +25,7 @@ function switchPage(hash){
     hashPage.classList.add("page--current")
 }
 
-function setFirstPage () {
+function setFirstPage() {
     const firstPage = document.querySelector('.page')
     firstPage.classList.add('page--current')
 }

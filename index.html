@@ -7,9 +7,9 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
     <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
     <link rel="stylesheet" href="css/main.css">
+    <script src="js/page-switcher.js"></script>
 </head>
 <body>
-
     <nav class="main-nav">
         <div class="main-nav__container">
             <a class="main-nav__container__logo" href="#home"></a>
@@ -27,10 +27,8 @@
                 <img class="menu-icon" src="images/menu.svg" alt="">
                 <img class="close-icon" src="images/menu-close.svg" alt="">
             </div>
-
         </div>
     </nav>
-
     <div class="main">
         <section class="page home" data-id="home">
             <div class="home__header">
@@ -38,12 +36,10 @@
                     <div class="background-photo-mask"></div>
                     <div class="background-photo"></div>
                 </div>
-
                 <div class="home__header__intro">
                     <div class="home__header__intro-content">
                         <div class="home__header__intro-content__text">
-                            <h2 class="home__header__intro-content__text--desktop">i’m a <span>web developer</span></h2>
-                            <h2 class="home__header__intro-content__text--mobile">i’m a<br><span>web developer</span></h2>
+                            <h2>i’m a <br><span>web developer</span></h2>
                             <div class="home__header__intro-content__text__wrap">
                                 <h3>chaokai lai</h3>
                                 <a href="#resume"><button class="ghost-button">resume</button></a>
@@ -53,10 +49,9 @@
                 </div>
             </div>
 
-            <div class="home__skill home-section">
-                <div class="home__skill__content home-section__content">
-
-                    <h2 class="home__skill__content__header home-section__content__header header-with-block">skill</h2>
+            <div class="home__skill home-container">
+                <div class="home__skill__content home-container__content">
+                    <h2 class="home__skill__content__header home-container__content__header header-with-block">skill</h2>
                     <div class="home__skill__content__cards">
                         <div class="skill-card">
                             <div class="skill-card__mask">
@@ -114,10 +109,10 @@
                 </div>
             </div>
 
-            <div class="home__project home-section">
+            <div class="home__project home-container">
                 <div class="home__project__mask"></div>
-                <div class="home__project__content home-section__content">
-                    <h2 class="home__project__content__header home-section__content__header header-with-block">project</h2>
+                <div class="home__project__content home-container__content">
+                    <h2 class="home__project__content__header home-container__content__header header-with-block">project</h2>
                     <div class="home__project__content__projects">
                         <div class="project">
                             <div class="project__mask"></div>
@@ -163,9 +158,9 @@
                 </div>
             </div>
 
-            <div class="home__blog home-section">
-                <div class="home__blog__content home-section__content">
-                    <h2 class="home__blog__content__header home-section__content__header header-with-block">latest blog</h2>
+            <div class="home__blog home-container">
+                <div class="home__blog__content home-container__content">
+                    <h2 class="home__blog__content__header home-container__content__header header-with-block">latest blog</h2>
                     <div class="home__blog__content__posts">
                         <div class="post">
                             <div class="post__img"></div>
@@ -225,9 +220,9 @@
                 </div>
             </div>
 
-            <div class="home__gallery home-section">
-                <div class="home__gallery__content home-section__content">
-                    <h2 class="home__gallery__content__header home-section__content__header header-with-block">gallery</h2>
+            <div class="home__gallery home-container">
+                <div class="home__gallery__content home-container__content">
+                    <h2 class="home__gallery__content__header home-container__content__header header-with-block">gallery</h2>
                     <div class="home__gallery__content__photos">
                         <div class="photo"></div>
                         <div class="photo"></div>
@@ -254,18 +249,84 @@
         <section class="page resume" data-id="resume">
             <span class="wait">resume</span>
         </section>
+
         <section class="page blog" data-id="blog">
             <span class="wait">blog</span>
         </section>
-        <section class="page gallery" data-id="gallery">
-            <span class="wait">gallery</span>
-        </section>
-        <section class="page contact" data-id="contact">
-            <span class="wait">contact</span>
-        </section>
 
-        <script src="js/page-switcher.js"></script>
-        <script src="js/main.js"></script>
+
+        <section class="page gallery" data-id="gallery">
+            <div class="gallery__background"></div>
+            <div class="gallery__container">
+                <h1>Isotope - filtering</h1>
+
+                <div class="button-group filters-button-group">
+                    <button class="button is-checked" data-filter="*">show all</button>
+                    <button class="button" data-filter=".metal">metal</button>
+                    <button class="button" data-filter=".transition">transition</button>
+                    <button class="button" data-filter=".alkali, .alkaline-earth">alkali and alkaline-earth</button>
+                    <button class="button" data-filter=":not(.transition)">not transition</button>
+                    <button class="button" data-filter=".metal:not(.transition)">metal but not transition</button>
+                    <button class="button" data-filter="numberGreaterThan50">number > 50</button>
+                    <button class="button" data-filter="ium">name ends with &ndash;ium</button>
+                </div>
+
+                <div class="grid">
+                    <div class="element-item transition metal " data-category="transition">
+                    </div>
+                    <div class="element-item metalloid " data-category="metalloid">
+                    </div>
+                    <div class="element-item post-transition metal " data-category="post-transition">
+
+                    </div>
+                    <div class="element-item post-transition metal " data-category="post-transition">
+
+                    </div>
+                    <div class="element-item transition metal " data-category="transition">
+
+                    </div>
+                    <div class="element-item alkali metal " data-category="alkali">
+
+                    </div>
+                    <div class="element-item alkali metal " data-category="alkali">
+
+                    </div>
+                    <div class="element-item transition metal " data-category="transition">
+
+                    </div>
+                    <div class="element-item alkaline-earth metal " data-category="alkaline-earth">
+                    </div>
+                    <div class="element-item transition metal " data-category="transition">
+
+                    </div>
+                    <div class="element-item post-transition metal " data-category="post-transition">
+
+                    </div>
+                    <div class="element-item metalloid " data-category="metalloid">
+
+                    </div>
+                    <div class="element-item transition metal " data-category="transition">
+
+                    </div>
+                    <div class="element-item lanthanoid metal inner-transition " data-category="lanthanoid">
+
+                    </div>
+                    <div class="element-item noble-gas nonmetal " data-category="noble-gas">
+
+                    </div>
+                    <div class="element-item diatomic nonmetal " data-category="diatomic">
+                    </div>
+                    <div class="element-item actinoid metal inner-transition " data-category="actinoid">
+
+                    </div>
+                    <div class="element-item actinoid metal inner-transition " data-category="actinoid">
+
+                    </div>
+                </div>
+
+
+            </div>
+        </section>
     </div>
 
     <footer class="footer">
@@ -320,5 +381,12 @@
             <h3>©All Rights Reserved</h3>
         </div>
     </footer>
+    <section class="page contact" data-id="contact">
+        <span class="wait">contact</span>
+    </section>
+
+    <script src="js/gallery.js"></script>
+    <script src="mocks/gallery-photos.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>

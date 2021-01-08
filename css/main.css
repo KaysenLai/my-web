@@ -1,8 +1,8 @@
 @charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Staatliches&display=swap");
 /*********************
 *media queries
 ***********************/
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Staatliches&display=swap");
 .main .home {
   font-family: "Staatliches", cursive;
 }
@@ -65,7 +65,7 @@
   font-size: 90px;
   line-height: 112px;
 }
-.main .home__header__intro-content__text--mobile {
+.main .home__header__intro-content__text h2 br {
   display: none;
 }
 .main .home__header__intro-content__text__wrap {
@@ -129,6 +129,9 @@
     font-size: 52px;
     line-height: 65px;
   }
+  .main .home__header__intro-content__text h2 br {
+    display: block;
+  }
   .main .home__header__intro-content__text h2 span {
     font-size: 52px;
     line-height: 65px;
@@ -136,18 +139,12 @@
   .main .home__header__intro-content__text h3 {
     font-size: 40px;
   }
-  .main .home__header__intro-content__text--desktop {
-    display: none;
-  }
-  .main .home__header__intro-content__text--mobile {
-    display: block;
-  }
   .main .home__header__intro-content__text__wrap {
     margin-top: 30px;
     flex-direction: column;
     align-items: flex-start;
   }
-  .main .home__header__intro-content__text__wrap button {
+  .main .home__header__intro-content__text__wrap .ghost-button {
     margin-top: 10px;
     margin-left: 0;
   }
@@ -257,14 +254,6 @@
 .main .home__skill__content__cards .skill-card__text h3 {
   font-size: 40px;
   letter-spacing: 0.05em;
-}
-@media screen and (max-width: 1440px) {
-  .main .home__skill__content__cards .skill-card {
-    width: 31%;
-  }
-  .main .home__skill__content__cards .skill-card:nth-of-type(4) {
-    display: none;
-  }
 }
 @media screen and (max-width: 1024px) {
   .main .home__skill__content__cards {
@@ -579,14 +568,14 @@
   }
 }
 
-.home-section {
+.home-container {
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #181818;
 }
-.home-section__content {
+.home-container__content {
   width: 100%;
   max-width: 1440px;
   padding: 100px 100px;
@@ -594,17 +583,20 @@
   height: 100%;
 }
 @media screen and (max-width: 1440px) {
-  .home-section__content {
+  .home-container__content {
     padding: 100px 100px;
+  }
+  .home-container__content > h2 {
+    font-size: 50px;
   }
 }
 @media screen and (max-width: 1024px) {
-  .home-section__content {
+  .home-container__content {
     padding: 100px 80px;
   }
 }
 @media screen and (max-width: 768px) {
-  .home-section__content {
+  .home-container__content {
     padding: 100px 40px;
   }
 }
@@ -780,10 +772,10 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
-.home__project__popups .popup-box .popup__image:nth-of-type(1) {
+.home__project__popups .popup-box .popup:nth-of-type(1) .popup__image {
   background-image: url("../images/project-img01.jpg");
 }
-.home__project__popups .popup-box .popup__image:nth-of-type(1) {
+.home__project__popups .popup-box .popup:nth-of-type(2) .popup__image {
   background-image: url("../images/project-img02.jpg");
 }
 .home__project__popups .popup-box .popup__text {
@@ -861,6 +853,166 @@ body.show-popup .home__project__popups {
     background-position-y: -2107px;
   }
 }
+/*********************
+*media queries
+***********************/
+.main .gallery__background {
+  width: 100%;
+  height: 300px;
+  background: pink;
+}
+.main .gallery__container {
+  width: 100%;
+  max-width: 1140px;
+  height: 1000px;
+  margin: 0 auto;
+  border: white solid 1px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+/* ---- button ---- */
+.button {
+  display: inline-block;
+  padding: 10px 18px;
+  margin-bottom: 10px;
+  background: #EEE;
+  border: none;
+  border-radius: 7px;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2));
+  color: #222;
+  font-family: sans-serif;
+  font-size: 16px;
+  text-shadow: 0 1px white;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #8CF;
+  text-shadow: 0 1px rgba(255, 255, 255, 0.5);
+  color: #222;
+}
+
+.button:active,
+.button.is-checked {
+  background-color: #28F;
+}
+
+.button.is-checked {
+  color: white;
+  text-shadow: 0 -1px rgba(0, 0, 0, 0.8);
+}
+
+.button:active {
+  box-shadow: inset 0 1px 10px rgba(0, 0, 0, 0.8);
+}
+
+/* ---- button-group ---- */
+.button-group:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.button-group .button {
+  float: left;
+  border-radius: 0;
+  margin-left: 0;
+  margin-right: 1px;
+}
+
+.button-group .button:first-child {
+  border-radius: 0.5em 0 0 0.5em;
+}
+
+.button-group .button:last-child {
+  border-radius: 0 0.5em 0.5em 0;
+}
+
+/* ---- isotope ---- */
+.grid {
+  border: 1px solid #333;
+}
+
+/* clear fix */
+.grid:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/* ---- .element-item ---- */
+.element-item {
+  position: relative;
+  float: left;
+  width: 100px;
+  height: 100px;
+  margin: 5px;
+  padding: 10px;
+  background: #888;
+}
+
+.element-item > * {
+  margin: 0;
+  padding: 0;
+}
+
+.element-item.alkali {
+  background: #F00;
+  background: red;
+}
+
+.element-item.alkaline-earth {
+  background: #F80;
+  background: #ff9900;
+}
+
+.element-item.lanthanoid {
+  background: #FF0;
+  background: #ccff00;
+}
+
+.element-item.actinoid {
+  background: #0F0;
+  background: #33ff00;
+}
+
+.element-item.transition {
+  background: #0F8;
+  background: #00ff66;
+}
+
+.element-item.post-transition {
+  background: #0FF;
+  background: aqua;
+}
+
+.element-item.metalloid {
+  background: #08F;
+  background: #0066ff;
+}
+
+.element-item.diatomic {
+  background: #00F;
+  background: #3300ff;
+}
+
+.element-item.halogen {
+  background: #F0F;
+  background: #cc00ff;
+}
+
+.element-item.noble-gas {
+  background: #F08;
+  background: #ff0099;
+}
+
 * {
   margin: 0;
   padding: 0;
