@@ -1,5 +1,5 @@
 const popupCloseBtn = document.querySelector('.popup-box__close-button a')
-const body = document.querySelector('body')
+
 popupCloseBtn.onclick = () => {
     body.classList.remove('show-popup')
 }

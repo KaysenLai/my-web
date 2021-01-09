@@ -1,7 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Staatliches&display=swap');
 @import "variables";
 @import "page-home";
-@import "gallery";
+@import "page-gallery";
+@import "page-blog";
+@import "page-resume";
+@import "page-contact";
 
 * {
   margin: 0;
@@ -174,20 +177,61 @@ body {
   width: 100%;
   background-color: $background;
   display: none;
-
-  &>.wait {
-    color: white;
-    font-size: 300px;
-  }
+  min-height: 1080px;
 
   &.page--current {
     display: block;
+  }
+
+  .page-top {
+    width: 100%;
+    height: 300px;
+    background-image: linear-gradient($background);
+    background-position-x: center;
+    background-position-y: center;
+    text-shadow: #181818 2px 2px 6px;
+    &__container {
+      width: 100%;
+      height: 100%;
+      max-width: 1140px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      color: white;
+      font-family: "Staatliches", cursive;
+      letter-spacing: 0.05em;
+      box-sizing: border-box;
+      padding-left: 44px;
+
+      h2 {
+        font-size: 70px;
+        position: relative;
+        &::after {
+          content: '';
+          position: absolute;
+          background-color: $magenta;
+          width: 17px;
+          height: 97px;
+          left: -34px;
+          top: 12px;
+          border-radius: $border-radius--micro;
+        }
+      }
+      h3 {
+        font-size: 30px;
+      }
+    }
+
   }
 
   @include MQ(L) {
     padding-top: $main-nav-height;
   }
 }
+
+
+
 
 .footer {
   width: 100%;

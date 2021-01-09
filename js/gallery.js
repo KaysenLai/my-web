@@ -1,5 +1,6 @@
 const defaultPhotoPath = 'images/gallery/'
 let currentImgId;
+const body = document.querySelector('body')
 
 createGrid()
 
@@ -27,6 +28,7 @@ function bindImgTag(imgTag) {
         const imgId = parseInt(e.target.getAttribute('img-id'))
         showPhotoById(imgId)
         photoBrowser.classList.add('visible')
+        body.classList.add('show-popup')
     }
 }
 
@@ -66,10 +68,13 @@ const photoBrowserCloseBtn = document.querySelector('.photo-browser__nav__close-
 const preBtn = document.querySelector('.photo-browser__nav__prePhoto')
 const nextBtn = document.querySelector('.photo-browser__nav__nextPhoto')
 
-photoBrowserCloseBtn.onclick = () => 
+photoBrowserCloseBtn.onclick = () => closePhotoBrowser()
+photoBrowserBackGround.onclick = () => closePhotoBrowser()
+
+function closePhotoBrowser() {
     photoBrowser.classList.remove('visible')
-photoBrowserBackGround.onclick = () =>
-    photoBrowser.classList.remove('visible')
+    body.classList.remove('show-popup')
+}
 
 preBtn.onclick = () => {
     const visibleIdList = getVisibleIdList()
