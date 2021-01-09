@@ -71,7 +71,6 @@ photoBrowserCloseBtn.onclick = () =>
 photoBrowserBackGround.onclick = () =>
     photoBrowser.classList.remove('visible')
 
-
 preBtn.onclick = () => {
     const visibleIdList = getVisibleIdList()
     let currentImgIndex = getIndexInVisibleIdList(visibleIdList)
@@ -106,19 +105,15 @@ function isFirstOrEnd(imgIndex, visibleIdList) {
 }
 
 
-
-
-
-
-
-
 // init Isotope https://isotope.metafizzy.co/
-let iso = new Isotope( '.gallery__content__photo-grid', {
-    itemSelector: '.photo-item',
-    layoutMode: 'masonry'
-});
+let iso
 
-
+function initIsotope() {
+    iso = new Isotope('.gallery__content__photo-grid', {
+        itemSelector: '.gallery__content__photo-grid .photo-item',
+        layoutMode: 'masonry'
+    });
+}
 
 // bind filter button click
 const filtersElem = document.querySelector('.filters-button-group');
@@ -140,7 +135,6 @@ function radioButtonGroup( buttonGroup ) {
         if ( !matchesSelector( event.target, 'button' ) ) {
             return;
         }
-        console.log(event.target)
         buttonGroup.querySelector('.is-checked').classList.remove('is-checked');
         event.target.classList.add('is-checked');
     });

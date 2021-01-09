@@ -1,6 +1,9 @@
 @import "variables";
 @import "media-query";
 
+
+
+
 .main .gallery {
   background-color: $background;
   min-height: 1080px;
@@ -53,27 +56,29 @@
     max-width: 1140px;
     margin: 0 auto;
     box-sizing: border-box;
-    padding: 50px 0 100px 0;
+    padding: 50px 10px 100px 10px;
+
     /* ---- button ---- */
 
-    .photo-grid::after {
-      content: '';
-      display: block;
-      clear: both;
-    }
+    &__photo-grid{
+      &::after {
+        content: '';
+        display: block;
+        clear: both;
+      }
 
-    .photo-item {
-      box-sizing: border-box;
-      width: 31%;
-      float: left;
-      margin: 1%;
-      cursor: pointer;
-      img {
-        max-width: 100%;
-        height: auto;
+      .photo-item {
+        box-sizing: border-box;
+        width: 31%;
+        float: left;
+        margin: 1%;
+        cursor: pointer;
+        img {
+          max-width: 100%;
+          height: auto;
+        }
       }
     }
-
 
     .photo-browser {
       width: 100%;

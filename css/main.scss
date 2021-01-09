@@ -118,7 +118,7 @@ body {
 
       &__menu {
         width: 300px;
-        height: calc(100% - $main-nav-height);
+        height: calc(100% - 72px);
         background: $black-dark;
         position: fixed;
         top: $main-nav-height;
@@ -146,7 +146,7 @@ body {
       &__mask {
         display: none;
         width: 100%;
-        height: calc(100% - $main-nav-height);
+        height: calc(100% - 72px);
         background: rgba(0, 0 ,0 , 0.3);
         position: fixed;
         top: $main-nav-height;

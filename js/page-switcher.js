@@ -16,8 +16,8 @@ const pageNames = ['home', 'resume', 'blog', 'gallery','contact']
 function switchPage(hash) {
     if (hash === "#gallery") {
         setTimeout(() => {
-            iso.arrange({ filter: '*' })
-        }, 750)
+            initIsotope()
+        }, 0)
     }
     const hashText = hash.substring(1) // eg: turn "#home" to "home"
     const hashPage = document.querySelector("section[data-id=" + hashText + "]")

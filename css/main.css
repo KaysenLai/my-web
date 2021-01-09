@@ -899,23 +899,23 @@ body.show-popup .home__project__popups {
   max-width: 1140px;
   margin: 0 auto;
   box-sizing: border-box;
-  padding: 50px 0 100px 0;
+  padding: 50px 10px 100px 10px;
   /* ---- button ---- */
   /* ---- button-group ---- */
 }
-.main .gallery__content .photo-grid::after {
+.main .gallery__content__photo-grid::after {
   content: "";
   display: block;
   clear: both;
 }
-.main .gallery__content .photo-item {
+.main .gallery__content__photo-grid .photo-item {
   box-sizing: border-box;
   width: 31%;
   float: left;
   margin: 1%;
   cursor: pointer;
 }
-.main .gallery__content .photo-item img {
+.main .gallery__content__photo-grid .photo-item img {
   max-width: 100%;
   height: auto;
 }
