@@ -376,7 +376,7 @@
 .main .home__blog__content__posts .post {
   width: 31%;
   height: 564px;
-  background: #4c4c4c;
+  background: #383838;
   color: white;
   font-family: "Roboto", sans-serif;
   border-radius: 10px;
@@ -1017,7 +1017,7 @@ body.show-popup .home__project__popups {
 }
 
 .main .contact__page-top {
-  background-image: url("../images/blog-bg.jpg");
+  background-image: url("../images/contact-bg.jpg");
 }
 
 * {
@@ -1211,6 +1211,13 @@ body button {
 }
 .page .page-top__container h3 {
   font-size: 30px;
+}
+.page .page-content {
+  width: 100%;
+  max-width: 1140px;
+  min-height: 300px;
+  border: red solid 1px;
+  margin: 0 auto;
 }
 @media screen and (max-width: 1024px) {
   .page {

@@ -225,6 +225,13 @@ body {
 
   }
 
+  .page-content {
+    width: 100%;
+    max-width: 1140px;
+    min-height: 300px;
+    border: red solid 1px;
+    margin: 0 auto;
+  }
   @include MQ(L) {
     padding-top: $main-nav-height;
   }

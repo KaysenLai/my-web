@@ -41,7 +41,9 @@ pageMask.onclick = closeMenu
 for (let navigation of navigations)
     navigation.onclick = closeMenu
 
+function verifyForm() {
 
+}
 
 
 

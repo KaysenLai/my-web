@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <title>Chaokai Lai's web</title>
     <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+    <script src="https://code.iconify.design/1/1.0.6/iconify.min.js"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
     <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
     <link rel="stylesheet" href="css/main.css">
-
 
 </head>
 <body>
@@ -30,6 +30,7 @@
             </div>
         </div>
     </nav>
+
     <div class="main">
         <section class="page home" data-id="home">
             <div class="home__header">
@@ -251,7 +252,7 @@
             <div class="resume__page-top page-top">
                 <div class="page-top__container">
                     <h2>Resume</h2>
-                    <h3>I'm hoping to see with you.</h3>
+                    <h3>I'm hoping to work with you.</h3>
                 </div>
             </div>
         </section>
@@ -309,6 +310,80 @@
                     <h3>Free free to contact with me.</h3>
                 </div>
             </div>
+
+            <div class="contact__content page-content">
+                <aside class="contact__content__aside">
+                    <div class="aside__avatar">
+                        <img src="images/avatar.jpg" alt="avatar">
+                    </div>
+                    <div class="aside__name">
+                        <h3>Chaokai Lai</h3>
+                    </div>
+                    <div class="aside__icons">
+                        <span class="iconify aside__icons__github" data-inline="false" data-icon="ant-design:github-filled" style="color: #e8e8e8; font-size: 30px;"></span>
+                        <span class="iconify aside__icons__linkedin" data-inline="false" data-icon="ant-design:linkedin-filled" style="color: #e8e8e8; font-size: 30px;"></span>
+                        <span class="iconify aside__icons__twitter" data-inline="false" data-icon="ant-design:twitter-circle-filled" style="color: #e8e8e8; font-size: 30px;"></span>
+                        <span class="iconify aside__icons__facebook" data-inline="false" data-icon="ant-design:facebook-filled" style="color: #e8e8e8; font-size: 30px;"></span>
+                    </div>
+                    <div class="aside__info">
+                        <h3 class="aside__info__header">Status</h3>
+                        <div class="aside__info__content">Unavailable</div>
+                    </div>
+                    <div class="aside__info">
+                        <h3 class="aside__info__header"></h3>
+                        <div class="aside__info__content"></div>
+                    </div>
+                    <div class="aside__info">
+                        <h3 class="aside__info__header">Job title</h3>
+                        <div class="aside__info__content">Front-end Developer</div>
+                    </div>
+                    <div class="aside__info">
+                        <h3 class="aside__info__header">location</h3>
+                        <div class="aside__info__content">Brisbane, Australia</div>
+                    </div>
+                    <div class="aside__info">
+                        <h3 class="aside__info__header">Email</h3>
+                        <div class="aside__info__content">chaokai.lai@gmail.com</div>
+                    </div>
+                    <div class="aside__info">
+                        <h3 class="aside__info__header">Birthday</h3>
+                        <div class="aside__info__content">Sep 28th, 1997</div>
+                    </div>
+
+                    <div class="aside__info">
+                        <h3 class="aside__info__header">Attachments</h3>
+                        <div class="aside__info__content">Sep 28th, 1997</div>
+                    </div>
+
+                </aside>
+
+                <article class="contact__content__article">
+                    <form
+                            action="https://formspree.io/f/xdopydja"
+                            method="POST"
+                            onsubmit="return verify()"
+                    >
+                        <label>
+                            Your Name:
+                            <input type="text" name="name"></textarea>
+                        </label>
+                        <label>
+                            Your Email:
+                            <input type="text" name="email">
+                        </label>
+                        <label>
+                            Your Message:
+                            <textarea name="message"></textarea>
+                        </label>
+
+                        <!-- your other form fields go here -->
+                        <button type="submit">Send</button>
+                    </form>
+                </article>
+
+
+            </div>
+
         </section>
     </div>
 
