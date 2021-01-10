@@ -1,6 +1,18 @@
 .main .resume {
   &__page-top {
 	background-image: url("../images/resume-bg.jpg");
+  }
 
+  &__content {
+	display: flex;
+
+	.info-aside {
+	  flex: 2;
+	}
+
+	&__article {
+	  flex: 7;
+	  border: green solid 1px;
+	}
   }
 }

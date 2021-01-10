@@ -227,18 +227,146 @@ body {
 
   .page-content {
     width: 100%;
-    max-width: 1140px;
+    max-width: 1260px;
     min-height: 300px;
-    border: red solid 1px;
+    box-sizing: border-box;
     margin: 0 auto;
+    padding: 60px 60px;
   }
+
   @include MQ(L) {
     padding-top: $main-nav-height;
   }
 }
 
+.info-aside {
+  display: flex;
+  flex-direction: column;
+  min-width: 260px;
+  margin-right: 30px;
+  background-color: $black-main;
+  border-radius: $border-radius--small;
+  align-items: center;
+  padding: 30px;
+  box-sizing: border-box;
+  color: $white-light;
+
+  &__avatar {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+
+    img {
+      border-radius: 50%;
+      width: 50%;
+      height: auto;
+    }
+  }
+
+  &__name {
+    font-size: 28px;
+    font-family: "Staatliches", cursive;
+    letter-spacing: 0.1em;
+  }
+
+  &__icons {
+    .iconify {
+      cursor: pointer;
+      margin: 6px 5px;
+      font-size: 30px;
+      color: #e8e8e8;
+
+      &:hover {
+        color: white;
+      }
+    }
+  }
+
+  &__info {
+    width: 100%;
+
+    &__header {
+      font-size: 24px;
+      margin: 20px 0 6px 0;
+      font-family: "Staatliches", cursive;
+      letter-spacing: 0.1em;
+      text-indent: 16px;
+      position: relative;
+
+      &::before {
+        content: '';
+        width: 8px;
+        height: 22px;
+        border-radius: 2px;
+        position: absolute;
+        top: 2px;
+        left: 0;
+        background-color: $magenta;
+      }
+    }
+
+    &__content {
+      width: 100%;
+      padding: 12px;
+      text-align: center;
+      background-color: $black-light;
+      border-radius: $border-radius--minor;
+      box-sizing: border-box;
+    }
+
+    &__button {
+      button{
+        border: none;
+        border-radius: $border-radius--minor;
+        background-color: $black-light;
+        width: 100%;
+        color: $white-light;
+        line-height: 42px;
+        display: flex;
+        align-items: center;
+        padding: 0 20px;
+        box-sizing: border-box;
+        margin-bottom: 14px;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+
+        .iconify {
+          color: $white-light;
+          font-size: 26px;
+          margin-right: 10px;
+        }
+
+        .button-decoration {
+          position: absolute;
+          width: 22px;
+          height: 22px;
+          bottom: 0;
+          right: 0;
+          overflow: hidden;
+          background:linear-gradient(to bottom right, $black-light 50%, $magenta 50%,$purple 100%);
+          transition: all 0.5s ease;
+          z-index: 0;
+        }
+
+        span {
+          position: relative;
+          z-index: 2;
+        }
+        &:hover .button-decoration {
+          width: 60px;
+          height: 60px;
+        }
+      }
 
 
+
+
+    }
+  }
+
+}
 
 .footer {
   width: 100%;
