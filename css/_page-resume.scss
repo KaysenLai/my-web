@@ -1,3 +1,5 @@
+@import "variables";
+
 .main .resume {
   &__page-top {
 	background-image: url("../images/resume-bg.jpg");
@@ -13,6 +15,92 @@
 	&__article {
 	  flex: 7;
 	  border: green solid 1px;
+	  background: $white-light;
+	  padding: 16px 40px 40px 40px;
+	  box-sizing: border-box;
+	  border-radius: $border-radius--small;
+
+	  h3 {
+		margin-top: 24px;
+		color: black;
+		font-size: 26px;
+		font-family: "Staatliches", cursive;
+		padding-left: 20px;
+		position: relative;
+		letter-spacing: 0.05em;
+		margin-bottom: 8px;
+
+		&::before {
+		  content: '';
+		  width: 10px;
+		  height: 22px;
+		  position: absolute;
+		  background-color: $purple;
+		  top: 2px;
+		  left: 0;
+		  border-radius: $border-radius--micro;
+		}
+	  }
+
+	  &__text {
+		margin-bottom: 12px;
+		font-size: 18px;
+		line-height: 26px;
+		font-weight: 400;
+		box-sizing: border-box;
+		padding: 14px 20px;
+		background-color: white;
+		border-radius: $border-radius--small;
+
+		h4 {
+		  font-weight: bold;
+		  font-size: 20px;
+		  margin-bottom: 10px;
+		}
+
+		p {
+		  margin-bottom: 10px;
+		  position: relative;
+		  text-indent: 18px;
+
+		  &.with-arrow::before {
+			content: '';
+			position: absolute;
+			width: 18px;
+			height: 16px;
+			top: 4px;
+			left: -1px;
+			background: url("../images/right-arrow-purple.svg") no-repeat center center;
+			background-size: 50%;
+		  }
+		}
+
+		img {
+		  display: inline-block;
+		  width: 8px;
+		  height: auto;
+		  margin: 0 2px;
+		}
+
+		&:first-of-type p {
+		  text-indent: 0;
+		}
+	  }
+
+	  &__icons {
+		margin-bottom: 20px;
+		line-height: 26px;
+		font-weight: 400;
+		box-sizing: border-box;
+		padding: 14px 20px;
+		background-color: white;
+		border-radius: $border-radius--small;
+
+
+		.iconify {
+		  margin-right: 10px;
+		}
+	  }
 	}
   }
 }

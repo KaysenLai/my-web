@@ -16,7 +16,7 @@ const pageNames = ['home', 'resume', 'blog', 'gallery','contact']
 let initIso = false
 function switchPage(hash) {
     if (!initIso && hash === "#gallery") {
-        setTimeout(() => initIsotope(), 0)
+        setTimeout(() => initIsotope(), 200)
         initIso = true
     }
     const hashText = hash.substring(1) // eg: turn "#home" to "home"
