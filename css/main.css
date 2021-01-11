@@ -867,6 +867,11 @@ body.show-popup .home__project__popups {
   /* ---- button ---- */
   /* ---- button-group ---- */
 }
+.main .gallery__content p {
+  font-size: 18px;
+  color: #888888;
+  margin-bottom: 30px;
+}
 .main .gallery__content__photo-grid::after {
   content: "";
   display: block;
