@@ -45,6 +45,6 @@ function verifyForm() {
 
 }
 
-
+document.querySelectorAll('.navigation')[2].onclick = () => setTimeout(() => alert("Coming soon."),100)
 
 
