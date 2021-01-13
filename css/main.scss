@@ -13,19 +13,16 @@
 
 body {
   font-family: 'Roboto', sans-serif;
-
   h2, h3, h4, h5, h6 {
     font-weight: normal;
   }
   img {
     display:block
   }
-
   button {
     border: none;
   }
 }
-
 .main-nav {
   font-family: 'Staatliches', cursive;
   background-color: $black-main;
@@ -34,7 +31,6 @@ body {
   height: $main-nav-height;
   box-shadow: 0 4px 20px 12px rgba(0, 0, 0, 0.5);
   width: 100%;
-
   &__container {
     width: 100%;
     max-width: 1440px;
@@ -45,31 +41,25 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 0 120px;
-
     &__logo {
       width: 100px;
       height: 43px;
       background-image : url('../images/logo-css-sprites.png');
       animation-fill-mode: forwards;
-
       &:hover {
         animation: moveY 2s steps(49);
         cursor: pointer;
         animation-fill-mode: forwards;
       }
     }
-
-
     &__menu{
       ul {
         display: flex;
         align-items: center;
-
         li {
           list-style: none;
           margin-left: 20px;
           border-radius: 4px;
-
           &:hover {
             a {
               color: white;
@@ -77,7 +67,6 @@ body {
             background-color: #404040;
             transition: background-color .3s ease;
           }
-
           a {
             font-size: 30px;
             letter-spacing: 0.1em;
@@ -90,7 +79,6 @@ body {
         }
       }
     }
-
     &__menu-icons {
       display: none;
       cursor: pointer;
@@ -102,22 +90,18 @@ body {
       }
     }
   }
-
   @include MQ(XL) {
     &__container__menu ul li{
       margin-left: 10px;
-
       a {
         padding: 0 15px;
       }
     }
   }
-
   @include MQ(L) {
     position: fixed;
     &__container {
       padding: 0 80px;
-
       &__menu {
         width: 300px;
         height: calc(100% - 72px);
@@ -127,24 +111,20 @@ body {
         left: -300px;
         transition: left 0.3s ease;
         box-shadow: black 11px 14px 20px;
-
         ul {
           flex-direction: column;
           box-sizing: border-box;
           padding: 0 30px;
           align-items: normal;
           margin-top: 30px;
-
           li {
             margin: 0 0 20px 0;
           }
         }
-
         &.active {
           left: 0;
         }
       }
-
       &__mask {
         display: none;
         width: 100%;
@@ -154,7 +134,6 @@ body {
         top: $main-nav-height;
         left: 0;
       }
-
       &__menu-icons {
         display: block;
         .menu-icon {
@@ -164,14 +143,12 @@ body {
     }
 
   }
-
   @include MQ(M) {
     &__container {
       padding: 0 40px;
     }
   }
 }
-
 .page {
   width: 100%;
   background-color: $background;
@@ -181,7 +158,6 @@ body {
   &.page--current {
     display: block;
   }
-
   .page-top {
     width: 100%;
     height: 300px;
@@ -189,7 +165,6 @@ body {
     background-position-x: center;
     background-position-y: center;
     text-shadow: #181818 2px 2px 6px;
-
     &__container {
       width: 100%;
       height: 100%;
@@ -203,7 +178,6 @@ body {
       letter-spacing: 0.05em;
       box-sizing: border-box;
       padding-left: 44px;
-
       h2 {
         font-size: 70px;
         position: relative;
@@ -222,9 +196,7 @@ body {
         font-size: 30px;
       }
     }
-
   }
-
   .page-content {
     width: 100%;
     max-width: 1260px;
@@ -233,11 +205,9 @@ body {
     margin: 0 auto;
     padding: 60px 60px;
   }
-
   @include MQ(L) {
     padding-top: $main-nav-height;
   }
-
   @include MQ(S) {
     .page-top {
       height: 200px;
@@ -264,7 +234,6 @@ body {
     }
   }
 }
-
 .info-aside {
   display: flex;
   flex-direction: column;
@@ -276,42 +245,35 @@ body {
   padding: 30px;
   box-sizing: border-box;
   color: $white-light;
-
   &__avatar {
     width: 100%;
     display: flex;
     justify-content: center;
     margin-bottom: 20px;
-
     img {
       border-radius: 50%;
       width: 50%;
       height: auto;
     }
   }
-
   &__name {
     font-size: 28px;
     font-family: "Staatliches", cursive;
     letter-spacing: 0.1em;
   }
-
   &__icons {
     .iconify {
       cursor: pointer;
       margin: 6px 5px;
       font-size: 30px;
       color: #e8e8e8;
-
       &:hover {
         color: white;
       }
     }
   }
-
   &__info {
     width: 100%;
-
     &__header {
       font-size: 24px;
       margin: 20px 0 6px 0;
@@ -319,7 +281,6 @@ body {
       letter-spacing: 0.1em;
       text-indent: 16px;
       position: relative;
-
       &::before {
         content: '';
         width: 8px;
@@ -331,7 +292,6 @@ body {
         background-color: $magenta;
       }
     }
-
     &__content {
       width: 100%;
       padding: 12px;
@@ -340,7 +300,6 @@ body {
       border-radius: $border-radius--minor;
       box-sizing: border-box;
     }
-
     &__button {
       button{
         border: none;
@@ -357,13 +316,11 @@ body {
         cursor: pointer;
         position: relative;
         overflow: hidden;
-
         .iconify {
           color: $white-light;
           font-size: 26px;
           margin-right: 10px;
         }
-
         .button-decoration {
           position: absolute;
           width: 22px;
@@ -375,7 +332,6 @@ body {
           transition: all 0.5s ease;
           z-index: 0;
         }
-
         span {
           position: relative;
           z-index: 2;
@@ -385,10 +341,6 @@ body {
           height: 60px;
         }
       }
-
-
-
-
     }
   }
 
@@ -400,7 +352,6 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-
   &__content {
     color: $grey;
     width: 100%;
@@ -409,30 +360,25 @@ body {
     box-sizing: border-box;
     display: flex;
     justify-content: space-between;
-
     section {
       padding: 15px;
       display: flex;
       justify-content: center;
-
       h2 {
         font-size: 28px;
         line-height: 50px;
         font-weight: 500;
       }
     }
-
     &__icon {
       flex: 1;
       display: flex;
       justify-content: center;
       align-items: center;
-
       img {
         width: 100px;
       }
     }
-
     &__about-web {
       flex: 3;
       &__content {
@@ -442,7 +388,6 @@ body {
         }
       }
     }
-
     &__links {
       flex: 1;
       &__nav {
@@ -457,7 +402,6 @@ body {
         }
       }
     }
-
     &__contact {
       font-size: 16px;
       flex: 2;
@@ -467,7 +411,6 @@ body {
       span {
         font-weight: bold;
       }
-
       &__content__social-icons {
         margin-top: 10px;
         .fab {
@@ -478,7 +421,6 @@ body {
       }
     }
   }
-
   &__copyright {
     width: 100%;
     color: $grey;
@@ -489,7 +431,6 @@ body {
       margin: 4px 0;
     }
   }
-
   @include MQ(XL) {
     &__content {
       padding: 20px 80px;
@@ -499,7 +440,6 @@ body {
           padding: 0;
         }
       }
-
       &__icon {
         img{
           display: none;
@@ -507,13 +447,11 @@ body {
       }
     }
   }
-
   @include MQ(L) {
     &__content {
       padding: 20px 30px;
     }
   }
-
   @include MQ(S) {
     &__content {
       flex-wrap: wrap;

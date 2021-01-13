@@ -921,7 +921,6 @@
 
 body.show-popup {
   overflow: hidden;
-  /* Temporarily disables page scrolling */
 }
 body.show-popup .home__project__popups {
   visibility: visible;

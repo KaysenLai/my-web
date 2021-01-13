@@ -7,11 +7,9 @@
 
   &__content {
 	display: flex;
-
 	.info-aside {
 	  flex: 2;
 	}
-
 	&__article {
 	  flex: 7;
 	  border: green solid 1px;
@@ -19,7 +17,6 @@
 	  padding: 16px 40px 40px 40px;
 	  box-sizing: border-box;
 	  border-radius: $border-radius--small;
-
 	  h3 {
 		margin-top: 24px;
 		color: black;
@@ -29,7 +26,6 @@
 		position: relative;
 		letter-spacing: 0.05em;
 		margin-bottom: 8px;
-
 		&::before {
 		  content: '';
 		  width: 10px;
@@ -41,7 +37,6 @@
 		  border-radius: $border-radius--micro;
 		}
 	  }
-
 	  &__text {
 		margin-bottom: 12px;
 		font-size: 18px;
@@ -51,18 +46,15 @@
 		padding: 14px 20px;
 		background-color: white;
 		border-radius: $border-radius--small;
-
 		h4 {
 		  font-weight: bold;
 		  font-size: 20px;
 		  margin-bottom: 10px;
 		}
-
 		p {
 		  margin-bottom: 10px;
 		  position: relative;
 		  text-indent: 18px;
-
 		  &.with-arrow::before {
 			content: '';
 			position: absolute;
@@ -74,19 +66,16 @@
 			background-size: 50%;
 		  }
 		}
-
 		img {
 		  display: inline-block;
 		  width: 8px;
 		  height: auto;
 		  margin: 0 2px;
 		}
-
 		&:first-of-type p {
 		  text-indent: 0;
 		}
 	  }
-
 	  &__icons {
 		margin-bottom: 20px;
 		line-height: 26px;
@@ -95,18 +84,15 @@
 		padding: 14px 20px;
 		background-color: white;
 		border-radius: $border-radius--small;
-
 		.iconify {
 		  margin-right: 10px;
 		}
 	  }
 	}
   }
-
   @include MQ(L) {
 	&__content {
 	  flex-direction: column;
-
 	  &__info-aside {
 		margin-right: 0;
 		margin-bottom: 30px;

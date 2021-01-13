@@ -3,18 +3,15 @@
 
 .main .gallery {
   background-color: $background;
-
   &__page-top {
     background-image: url("../images/gallery-bg.jpg");
   }
-
   &__content {
     width: 100%;
     max-width: 1140px;
     margin: 0 auto;
     box-sizing: border-box;
     padding: 50px 10px 100px 10px;
-
     p {
       font-size: 18px;
       color: #888888;
