@@ -42,7 +42,8 @@ for (let navigation of navigations)
     navigation.onclick = closeMenu
 
 function verifyForm() {
-
+    // To do verify
+    return true
 }
 
 document.querySelectorAll('.navigation')[2].onclick = () => setTimeout(() => alert("Coming soon."),100)

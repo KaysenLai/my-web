@@ -1151,13 +1151,15 @@ body.show-popup .home__project__popups {
   border-radius: 4px;
 }
 .main .contact__content__article label textarea {
-  font-size: 20px;
+  font-size: 18px;
   margin-top: 10px;
   border: none;
   width: 100%;
   height: 160px;
   resize: none;
+  padding: 15px 20px;
   font-family: "Roboto", sans-serif;
+  box-sizing: border-box;
 }
 .main .contact__content__article button {
   margin-top: 10px;

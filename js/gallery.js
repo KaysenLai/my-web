@@ -136,7 +136,6 @@ for ( let i=0; i < buttonGroups.length; i++ ) {
 
 function radioButtonGroup( buttonGroup ) {
     buttonGroup.addEventListener( 'click', function( event ) {
-        // only work with buttons
         if ( !matchesSelector( event.target, 'button' ) ) {
             return;
         }
