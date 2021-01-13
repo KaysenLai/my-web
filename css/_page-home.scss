@@ -241,14 +241,13 @@
             background: linear-gradient(305.78deg, #6500E0 0%, #9E1FDA 53.99%, #D43F8D 100%);
             opacity: 0;
             transition: opacity 0.5s ease;
-
+            display: flex;
+            justify-content: center;
+            align-items: center;
             &__text {
               width: 75%;
               height: 75%;
               position: absolute;
-              left: 50%;
-              top: 50%;
-              transform: translateX(-50%) translateY(-50%);
               background-color: rgba(0, 0, 0, 0.5);
               padding: 20px;
               box-sizing: border-box;
@@ -296,45 +295,58 @@
       }
     }
 
-    //@include MQ(XL) {
-    //  &__content__cards {
-    //    .skill-card{
-    //      width: 31%;
-    //      &:nth-of-type(4) {
-    //        display: none;
-    //      }
-    //    }
-    //  }
-    //}
     @include MQ(L) {
       &__content__cards {
         flex-wrap: wrap;
         .skill-card{
           width: 48%;
           margin-bottom: 6%;
-          &:nth-of-type(4) {
-            display: block;
+        }
+      }
+    }
+
+    @include MQ(M) {
+      &__content__cards {
+        .skill-card{
+          height: 270px;
+          &__mask {
+            height: 200px;
+            &__text {
+              width: 85%;
+              height: 85%;
+              padding: 10px 15px;
+              p {
+                font-size: 15px;
+              }
+            }
+          }
+          &__icon {
+            height: 200px;
+            img {
+              width: 100px;
+              height: auto;
+            }
+          }
+          &__text {
+            height: 70px;
+            h3 {
+              font-size: 30px;
+            }
           }
         }
       }
     }
 
-    @include MQ(M) {
+    @include MQ(S) {
       &__content__cards {
+        margin-top: 30px;
         justify-content: center;
         .skill-card{
-          width: 80%;
-        }
-      }
-    }
-
-    @include MQ(M) {
-      &__content__cards {
-        .skill-card{
-          width: 100%;
+          width: 70%;
           margin-bottom: 10%;
         }
       }
+
     }
   }
 
@@ -422,17 +434,29 @@
 
     @include MQ(L) {
       &__content__projects {
-          display: flex;
-          justify-content: space-between;
-          margin-top: 60px;
-          position: relative;
-          z-index: 1;
-          flex-wrap: wrap;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 60px;
+        position: relative;
+        z-index: 1;
+        flex-wrap: wrap;
 
-          .project {
-            width: 100%;
-            margin-bottom: 8%;
+        .project {
+          width: 100%;
+          margin-bottom: 8%;
+        }
+      }
+    }
+
+    @include MQ(S) {
+      &__content__projects {
+        margin-top: 30px;
+        .project {
+          height: 250px;
+          &__text {
+            font-size: 24px;
           }
+        }
       }
     }
   }
@@ -576,6 +600,44 @@
         }
       }
     }
+
+    @include MQ(S) {
+      &__content__posts {
+        margin-top: 30px;
+        .post {
+          height: 384px;
+          &__text {
+            height: 214px;
+            padding: 10px 15px;
+            h2 {
+              font-size: 20px;
+              line-height: 24px;
+            }
+            p {
+              font-size: 14px;
+              line-height: 18px;
+              margin: 10px 0;
+            }
+
+            img {
+              width: 9px;
+              height: auto;
+            }
+            &__time {
+              right: 15px;
+              font-size: 12px;
+            }
+            &__tags {
+              top: -33px;
+            }
+          }
+
+          &__img {
+            height: 176px;
+          }
+        }
+      }
+    }
   }
 
   &__gallery {
@@ -585,7 +647,7 @@
       &__photos {
         display: grid;
         grid-template-columns: auto auto auto;
-        grid-template-rows: 280px 280px;
+        grid-auto-rows: 280px;
         grid-gap: 30px;
         margin-top: 50px;
 
@@ -626,15 +688,16 @@
 
     @include MQ(L) {
       &__content__photos {
-          grid-template-columns: auto auto;
+        grid-template-columns: auto auto;
         grid-auto-rows: 250px;
         }
     }
 
     @include MQ(M) {
       &__content__photos {
+        margin-top: 30px;
         grid-template-columns: auto;
-        grid-auto-rows: 250px;
+        grid-auto-rows: 240px;
       }
     }
   }
@@ -654,7 +717,6 @@
         line-height: 50px;
         letter-spacing: 0.05em;
       }
-
       a {
         color: white;
         margin-top: 20px;
@@ -706,11 +768,21 @@
     }
 
     @include MQ(L) {
-      padding: 100px 80px;
+      padding: 80px 80px;
     }
 
     @include MQ(M) {
-      padding: 100px 40px;
+      padding: 60px 40px;
+      & > h2 {
+        font-size: 40px;
+        margin-left: 22px;
+        &::before {
+          width: 14px;
+          height: 34px;
+          top: 6px;
+          left: -22px;
+        }
+      }
     }
   }
 }
@@ -747,6 +819,13 @@
   cursor: pointer;
   border-radius: $border-radius--micro;
   margin-right: 10px;
+
+  @include MQ(M) {
+    height: 24px;
+    padding: 3px 10px;
+    font-size: 14px;
+    line-height: 20px;
+  }
 }
 
 .tag--color-magenta {
