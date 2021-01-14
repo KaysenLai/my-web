@@ -18,14 +18,12 @@
       margin-bottom: 30px;
     }
     /* ---- button ---- */
-
     &__photo-grid{
       &::after {
         content: '';
         display: block;
         clear: both;
       }
-
       .photo-item {
         box-sizing: border-box;
         width: 31%;
@@ -57,7 +55,6 @@
         background: rgba(0,0,0,0.85);
         position: absolute;
       }
-
       &__nav {
         &__close-button {
           color: white;
