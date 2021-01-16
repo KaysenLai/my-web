@@ -1,12 +1,12 @@
 const popupCloseBtn = document.querySelector('.popup-box__close-button a');
 popupCloseBtn.onclick = () => {
-  body.classList.remove('show-popup');
+  document.querySelector('body').classList.remove('show-popup');
 };
 const projects = document.querySelectorAll('.home__project .project');
 const popups = document.querySelectorAll('.home__project .popup');
 for (let i = 0; i < projects.length; i += 1) {
   projects[i].onclick = () => {
-    body.classList.add('show-popup');
+    document.querySelector('body').classList.add('show-popup');
     for (let j = 0; j < popups.length; j += 1) popups[j].style.display = 'none';
     popups[i].style.display = 'block';
   };
@@ -31,7 +31,3 @@ const closeMenu = () => {
 closeBtn.onclick = closeMenu;
 pageMask.onclick = closeMenu;
 for (let i = 0; i < navigations.length; i += 1) navigations[i].onclick = closeMenu;
-function verifyForm() {
-  // To do verify
-  return true;
-}
