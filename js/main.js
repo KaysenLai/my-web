@@ -1,51 +1,37 @@
-const popupCloseBtn = document.querySelector('.popup-box__close-button a')
-
+const popupCloseBtn = document.querySelector('.popup-box__close-button a');
 popupCloseBtn.onclick = () => {
-    body.classList.remove('show-popup')
+  body.classList.remove('show-popup');
+};
+const projects = document.querySelectorAll('.home__project .project');
+const popups = document.querySelectorAll('.home__project .popup');
+for (let i = 0; i < projects.length; i += 1) {
+  projects[i].onclick = () => {
+    body.classList.add('show-popup');
+    for (let j = 0; j < popups.length; j += 1) popups[j].style.display = 'none';
+    popups[i].style.display = 'block';
+  };
 }
-const projects = document.querySelectorAll('.home__project .project')
-const popups = document.querySelectorAll('.home__project .popup')
-
-for (let i = 0; i < projects.length; i++) {
-    projects[i].onclick = () => {
-        body.classList.add('show-popup')
-        for (let popup of popups)
-            popup.style.display = 'none'
-        popups[i].style.display = 'block'
-    }
-}
-
-const menuBtn = document.querySelector('.menu-icon')
-const leftMenu = document.querySelector('.main-nav__container__menu')
-const closeBtn = document.querySelector('.close-icon')
-const pageMask = document.querySelector('.main-nav__container__mask')
-const navigations = document.querySelectorAll('.navigation')
-
+const menuBtn = document.querySelector('.menu-icon');
+const leftMenu = document.querySelector('.main-nav__container__menu');
+const closeBtn = document.querySelector('.close-icon');
+const pageMask = document.querySelector('.main-nav__container__mask');
+const navigations = document.querySelectorAll('.navigation');
 menuBtn.onclick = () => {
-    leftMenu.classList.add('active')
-    menuBtn.style.display = 'none'
-    closeBtn.style.display = 'block'
-    pageMask.style.display = 'block'
-}
-
+  leftMenu.classList.add('active');
+  menuBtn.style.display = 'none';
+  closeBtn.style.display = 'block';
+  pageMask.style.display = 'block';
+};
 const closeMenu = () => {
-    leftMenu.classList.remove('active')
-    menuBtn.style.display = 'block'
-    closeBtn.style.display = 'none'
-    pageMask.style.display = 'none'
-}
-
-closeBtn.onclick = closeMenu
-pageMask.onclick = closeMenu
-
-for (let navigation of navigations)
-    navigation.onclick = closeMenu
-
+  leftMenu.classList.remove('active');
+  menuBtn.style.display = 'block';
+  closeBtn.style.display = 'none';
+  pageMask.style.display = 'none';
+};
+closeBtn.onclick = closeMenu;
+pageMask.onclick = closeMenu;
+for (let i = 0; i < navigations.length; i += 1) navigations[i].onclick = closeMenu;
 function verifyForm() {
-    // To do verify
-    return true
+  // To do verify
+  return true;
 }
-
-document.querySelectorAll('.navigation')[2].onclick = () => setTimeout(() => alert("Coming soon."),100)
-
-

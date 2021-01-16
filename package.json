@@ -1,0 +1,27 @@
+{
+  "name": "my-web",
+  "version": "1.0.0",
+  "description": "This is Chaokai Lai's personal web.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint src --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KaysenLai/my-web.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KaysenLai/my-web/issues"
+  },
+  "homepage": "https://github.com/KaysenLai/my-web#readme",
+  "devDependencies": {
+    "eslint": "^7.18.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1"
+  },
+  "dependencies": {}
+}
