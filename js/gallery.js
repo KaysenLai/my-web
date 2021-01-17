@@ -48,7 +48,7 @@ function createPhotoItem(photoData) {
 function getVisibleIdList() {
   const visibleIdList = [];
   const photoItems = document.querySelectorAll('.photo-item');
-  for (let i; i < photoItems.length; i += 1) {
+  for (let i = 0; i < photoItems.length; i += 1) {
     if (photoItems[i].style.display !== 'none') {
       const photo = photoItems[i].querySelector('img');
       visibleIdList.push(+photo.getAttribute('img-id'));

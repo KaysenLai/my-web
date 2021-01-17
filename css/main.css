@@ -822,7 +822,7 @@
   color: white;
   text-align: right;
   text-decoration: none;
-  font-size: 30px;
+  font-size: 24px;
   position: absolute;
   top: 20px;
   right: 20px;
@@ -862,32 +862,40 @@
   background-image: url("../images/project-img02.jpg");
 }
 .home__project__popups .popup-box .popup__text {
-  padding: 10px 40px;
+  padding: 15px 40px;
   height: 60%;
   box-sizing: border-box;
   color: white;
 }
 .home__project__popups .popup-box .popup__text h3 {
   margin-top: 20px;
-  font-size: 30px;
-  line-height: 50px;
+  font-size: 24px;
   letter-spacing: 0.05em;
 }
 .home__project__popups .popup-box .popup__text p {
-  font-size: 18px;
-  line-height: 22px;
+  font-size: 16px;
+  line-height: 20px;
   font-family: "Roboto", sans-serif;
 }
+.home__project__popups .popup-box .popup__text a {
+  color: #4399ff;
+}
 .home__project__popups .popup-box .popup__text .ghost-button {
+  font-size: 20px;
   position: absolute;
   bottom: 32px;
   left: 50%;
   transform: translateX(-50%);
-  width: 180px;
+  width: 140px;
+  line-height: 37px;
+  border: white solid 2px;
 }
 .home__project__popups .popup-box .popup__text .ghost-button::before {
   content: "see it now";
-  width: 180px;
+  width: 140px;
+  line-height: 41px;
+  top: -2px;
+  left: -2px;
 }
 @media screen and (max-width: 1024px) {
   .home__project__popups .popup-box {
@@ -895,27 +903,18 @@
     height: 70vh;
   }
   .home__project__popups .popup-box .popup__image {
-    height: 200px;
+    height: 170px;
   }
   .home__project__popups .popup-box .popup__text {
-    padding: 10px 30px;
+    padding: 0 20px;
   }
   .home__project__popups .popup-box .popup__text h3 {
-    font-size: 26px;
-    line-height: 40px;
+    margin-top: 15px;
+    font-size: 22px;
   }
   .home__project__popups .popup-box .popup__text p {
-    font-size: 18px;
-    line-height: 22px;
-  }
-  .home__project__popups .popup-box .popup__text .ghost-button {
-    font-size: 24px;
-    width: 150px;
-  }
-  .home__project__popups .popup-box .popup__text .ghost-button::before {
-    width: 150px;
-    font-size: 24px;
-    content: "see it now";
+    font-size: 14px;
+    line-height: 16px;
   }
 }
 
