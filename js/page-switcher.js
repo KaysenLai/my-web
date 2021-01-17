@@ -21,7 +21,7 @@ function hashNotFound(hash) {
 let initIso = false;
 function switchPage(hash) {
   if (!initIso && hash === '#gallery') {
-    setTimeout(() => initIsotope(), 200);
+    setTimeout(() => initIsotope(), 500);
     initIso = true;
   }
   const hashText = hash.substring(1); // eg: turn "#home" to "home"
@@ -34,12 +34,10 @@ function switchPage(hash) {
   hashPage.classList.add('page--current');
 }
 
-// 第一次进入或者刷新当前页面
 window.onload = () => {
   if (location.hash) { switchPage(location.hash); } else { setFirstPage(); }
 };
 
-// 当锚改变时跳转到相应页面,
 window.onhashchange = () => {
   switchPage(location.hash);
 };
