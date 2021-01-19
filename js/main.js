@@ -31,3 +31,10 @@ const closeMenu = () => {
 closeBtn.onclick = closeMenu;
 pageMask.onclick = closeMenu;
 for (let i = 0; i < navigations.length; i += 1) navigations[i].onclick = closeMenu;
+new Typed('.home__header__intro-content__text__typed-text', {
+  strings: ["Web developer.", "Designer.", "Photographer."],
+  typeSpeed: 100,
+  backSpeed: 70,
+  loop: true,
+  backDelay: 3000,
+});

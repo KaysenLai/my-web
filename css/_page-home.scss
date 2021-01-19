@@ -3,7 +3,6 @@
 
 .main .home {
   font-family: 'Staatliches', cursive;
-
   &__header {
     position: relative;
     width: 100%;
@@ -12,15 +11,15 @@
         width: 100%;
         position: absolute;
         z-index: 2;
-        background: url("../images/home-page-photo-mask.png") center center no-repeat;
         height: 674px;
+        background: url("../images/home-page-photo-mask.png") center center no-repeat;
       }
       .background-photo {
         position: absolute;
         z-index: 1;
         width: 100%;
-        background: url("../images/home-page-photo.jpg") center center no-repeat;
         height: 674px;
+        background: url("../images/home-page-photo.jpg") center center no-repeat;
         animation: hue-rotate 15s linear infinite;
       }
     }
@@ -38,28 +37,23 @@
         border-radius: 30px;
         width: 80%;
         max-width: 1140px;
-        padding: 0 120px;
+        padding-left: 400px;
         box-sizing: border-box;
         height: 280px;
         display: flex;
         align-items: center;
-        position: relative;
         &__text {
           letter-spacing: 0.25em;
           display: flex;
           justify-content: center;
           flex-direction: column;
           color: white;
-          position: absolute;
-          right: 100px;
           span {
             color: $magenta;
-            font-size: 90px;
-            line-height: 112px;
           }
           h2 {
-            font-size: 90px;
-            line-height: 112px;
+            font-size: 80px;
+            margin-bottom: 16px;
             br {
               display: none;
             }
@@ -68,7 +62,7 @@
             display: flex;
             align-items: center;
             h3 {
-              font-size: 60px;
+              font-size: 50px;
             }
             .ghost-button {
               margin-left: 20px;
@@ -89,14 +83,11 @@
       &__intro {
         &-content {
           width: 85%;
+          padding-left: 300px;
           &__text {
             right: 80px;
             h2 {
               font-size: 70px;
-              line-height: 112px;
-              span {
-                font-size: 70px;
-              }
             }
           }
         }
@@ -105,14 +96,10 @@
     @include MQ(L) {
       &__intro {
         &-content {
+          padding-left: 100px;
           &__text {
-            right: 50px;
             h2 {
               font-size: 60px;
-              line-height: 112px;
-              span {
-                font-size: 60px;
-              }
             }
           }
         }
@@ -121,66 +108,61 @@
     @include MQ(M) {
       &__intro {
         &-content {
-          width: 85%;
-          height: 60%;
-          padding: 0;
-          display: flex;
-          justify-content: center;
+
+          padding-left: 25px;
           &__text {
-            right: unset;
             h2 {
-              font-size: 52px;
-              line-height: 65px;
+              font-size: 46px;
               br {
                 display: block;
               }
-              span {
-                font-size: 52px;
-                line-height: 65px;
-              }
             }
             h3 {
-              font-size: 40px;
+              font-size: 34px;
             }
-            &__wrap {
-              margin-top: 30px;
-              flex-direction: column;
-              align-items: flex-start;
-              .ghost-button {
-                margin-top: 10px;
-                margin-left: 0;
-              }
-            }
+
           }
         }
       }
     }
     @include MQ(S) {
+      &__background {
+        .background-photo-mask {
+          height: 500px;
+          background-size: cover;
+        }
+        .background-photo {
+          height: 500px;
+          background-size: cover;
+        }
+      }
       &__intro {
+        height: 500px;
         &-content {
           width: 85%;
+          height: 60%;
           &__text {
             h2 {
-              font-size: 50px;
-              line-height: 65px;
-              letter-spacing: 0.02em;
-              span {
-                font-size: 50px;
-                line-height: 65px;
-                letter-spacing: 0.02em;
-              }
+              font-size: 40px;
+              letter-spacing: 0;
             }
             h3 {
-              font-size: 30px;
-            }
-            button {
               font-size: 25px;
-              width: 120px;
-              line-height: 46px;
-              &::before {
-                font-size: 25px;
-                width: 120px;
-                line-height: 52px;
+            }
+            &__wrap {
+              flex-direction: column;
+              align-items: flex-start;
+              .ghost-button {
+                margin-top: 10px;
+                margin-left: 0;
+                width: 94px;
+                font-size: 20px;
+                line-height: 30px;
+
+                &::before {
+                  width: 94px;
+                  line-height: 36px;
+                }
               }
             }
           }
@@ -766,9 +748,9 @@
   border: white solid 3px;
   border-radius: 8px;
   color: white;
-  width: 152px;
-  line-height: 46px;
-  font-size: 30px;
+  width: 124px;
+  line-height: 40px;
+  font-size: 25px;
   cursor: pointer;
   letter-spacing: 0.1em;
   background: none;
@@ -778,8 +760,8 @@
   &::before {
     content: 'resume';
     border-radius: 7px;
-    width: 152px;
-    line-height: 52px;
+    width: 124px;
+    line-height: 46px;
     background-image: linear-gradient(305.78deg, #6500E0 0%, #9E1FDA 53.99%, #D43F8D 100%);
     position: absolute;
     opacity: 0;
